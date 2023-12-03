@@ -34,11 +34,11 @@ const BlogComponent = () => {
                                         <h1 className="news-title"><a href="news-single.html">More than 80 clinical trials launch to test of the coronavirus .</a></h1>
                                         <div className="meta">
                                             <div className="meta-left">
-                                                <span className="author"><a href="#"><img src="../assets/img/author1.jpg" alt="#" />Naimur Rahman</a></span>
+                                                <span className="author"><a href="/"><img src="../assets/img/author1.jpg" alt="#" />Naimur Rahman</a></span>
                                                 <span className="date"><i className="fa fa-clock-o"></i>03 Feb 2019</span>
                                             </div>
                                             <div className="meta-right">
-                                                <span className="comments"><a href="#"><i className="fa fa-comments"></i>05 Comments</a></span>
+                                                <span className="comments"><a href="/"><i className="fa fa-comments"></i>05 Comments</a></span>
                                                 <span className="views"><i className="fa fa-eye"></i>33K Views</span>
                                             </div>
                                         </div>
@@ -68,15 +68,15 @@ const BlogComponent = () => {
                                         </div>
                                         <div className="blog-bottom">
                                             <ul className="social-share">
-                                                <li className="facebook"><a href="#"><i className="fa fa-facebook"></i><span>Facebook</span></a></li>
-                                                <li className="twitter"><a href="#"><i className="fa fa-twitter"></i><span>Twitter</span></a></li>
-                                                <li className="google-plus"><a href="#"><i className="fa fa-google-plus"></i></a></li>
-                                                <li className="linkedin"><a href="#"><i className="fa fa-linkedin"></i></a></li>
-                                                <li className="pinterest"><a href="#"><i className="fa fa-pinterest"></i></a></li>
+                                                <li className="facebook"><a href="/"><i className="fa fa-facebook"></i><span>Facebook</span></a></li>
+                                                <li className="twitter"><a href="/"><i className="fa fa-twitter"></i><span>Twitter</span></a></li>
+                                                <li className="google-plus"><a href="/"><i className="fa fa-google-plus"></i></a></li>
+                                                <li className="linkedin"><a href="/"><i className="fa fa-linkedin"></i></a></li>
+                                                <li className="pinterest"><a href="/"><i className="fa fa-pinterest"></i></a></li>
                                             </ul>
                                             <ul className="prev-next">
-                                                <li className="prev"><a href="#"><i className="fa fa-angle-double-left"></i></a></li>
-                                                <li className="next"><a href="#"><i className="fa fa-angle-double-right"></i></a></li>
+                                                <li className="prev"><a href="/"><i className="fa fa-angle-double-left"></i></a></li>
+                                                <li className="next"><a href="/"><i className="fa fa-angle-double-right"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -88,17 +88,17 @@ const BlogComponent = () => {
                                 <div className="single-widget search">
                                     <div className="form">
                                         <input type="email" placeholder="Search Here..." />
-                                        <a className="button" href="#"><i className="fa fa-search"></i></a>
+                                        <a className="button" href="/"><i className="fa fa-search"></i></a>
                                     </div>
                                 </div>
                                 <div className="single-widget category">
                                     <h3 className="title">Blog Categories</h3>
                                     <ul className="categor-list">
-                                        <li><a href="#">Mens Apparel</a></li>
-                                        <li><a href="#">Womens Apparel</a></li>
-                                        <li><a href="#">Bags Collection</a></li>
-                                        <li><a href="#">Accessories</a></li>
-                                        <li><a href="#">Sun Glasses</a></li>
+                                        <li><a href="/">Mens Apparel</a></li>
+                                        <li><a href="/">Womens Apparel</a></li>
+                                        <li><a href="/">Bags Collection</a></li>
+                                        <li><a href="/">Accessories</a></li>
+                                        <li><a href="/">Sun Glasses</a></li>
                                     </ul>
                                 </div>
                                 <div className="single-widget recent-post">
@@ -108,7 +108,7 @@ const BlogComponent = () => {
                                             <img src="../assets/img/blog-sidebar1.jpg" alt="#" />
                                         </div>
                                         <div className="content">
-                                            <h5><a href="#">We have annnocuced our new product.</a></h5>
+                                            <h5><a href="/">We have annnocuced our new product.</a></h5>
                                             <ul className="comment">
                                                 <li><i className="fa fa-calendar" aria-hidden="true"></i>Jan 11, 2020</li>
                                                 <li><i className="fa fa-commenting-o" aria-hidden="true"></i>35</li>
@@ -120,7 +120,7 @@ const BlogComponent = () => {
                                             <img src="../assets/img/blog-sidebar2.jpg" alt="#" />
                                         </div>
                                         <div className="content">
-                                            <h5><a href="#">Top five way for solving teeth problems.</a></h5>
+                                            <h5><a href="/">Top five way for solving teeth problems.</a></h5>
                                             <ul className="comment">
                                                 <li><i className="fa fa-calendar" aria-hidden="true"></i>Mar 05, 2019</li>
                                                 <li><i className="fa fa-commenting-o" aria-hidden="true"></i>59</li>
@@ -132,7 +132,7 @@ const BlogComponent = () => {
                                             <img src="../assets/img/blog-sidebar3.jpg" alt="#" />
                                         </div>
                                         <div className="content">
-                                            <h5><a href="#">We provide highly business soliutions.</a></h5>
+                                            <h5><a href="/">We provide highly business soliutions.</a></h5>
                                             <ul className="comment">
                                                 <li><i className="fa fa-calendar" aria-hidden="true"></i>June 09, 2019</li>
                                                 <li><i className="fa fa-commenting-o" aria-hidden="true"></i>44</li>
@@ -143,13 +143,13 @@ const BlogComponent = () => {
                                 <div className="single-widget side-tags">
                                     <h3 className="title">Tags</h3>
                                     <ul className="tag">
-                                        <li><a href="#">business</a></li>
-                                        <li><a href="#">wordpress</a></li>
-                                        <li><a href="#">html</a></li>
-                                        <li><a href="#">multipurpose</a></li>
-                                        <li><a href="#">education</a></li>
-                                        <li><a href="#">template</a></li>
-                                        <li><a href="#">Ecommerce</a></li>
+                                        <li><a href="/">business</a></li>
+                                        <li><a href="/">wordpress</a></li>
+                                        <li><a href="/">html</a></li>
+                                        <li><a href="/">multipurpose</a></li>
+                                        <li><a href="/">education</a></li>
+                                        <li><a href="/">template</a></li>
+                                        <li><a href="/">Ecommerce</a></li>
                                     </ul>
                                 </div>
                             </div>
