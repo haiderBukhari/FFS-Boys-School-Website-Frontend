@@ -1,0 +1,19 @@
+.border {
+    border-radius: 20px !important;
+}
+
+.mail,
+.call,
+.write-principal-sidebar {
+    background-color: #89b5fa !important;
+}
+
+#outlined-basic {
+    height: 43px;
+    background-color: #fff !important;
+    color: #000;
+}
+
+::placeholder {
+    padding: 10px;
+}

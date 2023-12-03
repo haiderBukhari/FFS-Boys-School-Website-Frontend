@@ -1,0 +1,14 @@
+.quote-style{
+    display: block !important;
+}
+@media only screen and (min-width: "760px"){
+    #sub-sliders{
+        padding: "90px 90px" !important;
+    }
+}
+.overlay:before{
+    background-color: #fff !important;
+}
+.clients{
+    padding: 0 !important;
+}
