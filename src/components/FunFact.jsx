@@ -1,7 +1,7 @@
 import style from "./styles.module.css"
 export const FunFact = () => {
     return (
-        <div  id="fun-facts" className={`fun-facts section ${style.overlay} rounded-lg`} style={{margin: '20px 20px',  padding: '60px 10px 30px 40px', borderRadius: '20px', backgroundColor: '#1a76d1'}} >
+        <div  id="fun-facts" className={`fun-facts section ${style.overlay} rounded-lg`} style={{margin: '20px 20px',  padding: '60px 10px 60px 40px', borderRadius: '20px', backgroundColor: '#1a76d1'}} >
 			<div className="container">
 				<div className="row">
 					<div className="col-lg-3 col-md-6 col-12">
