@@ -23,7 +23,7 @@ const ContactResponses = () => {
 
     const getContactData = () => {
         setLoading(true);
-        axios.get(`${process.env.REACT_BACKEND_PORT}/contact?page=${pagination.page}&limit=${pagination.rowsPerPage}&viewed=${viewed}`).then(res => {
+        axios.get(`${process.env.REACT_APP_BACKEND_PORT}/contact?page=${pagination.page}&limit=${pagination.rowsPerPage}&viewed=${viewed}`).then(res => {
             console.log(res.data.data)
             setContactData(res.data.data);
         }).catch(err => alert(err.message))
@@ -31,7 +31,7 @@ const ContactResponses = () => {
     }
 
     const updateContactData = (id) => {
-        axios.patch(`${process.env.REACT_BACKEND_PORT}/contact`, { id }, {
+        axios.patch(`${process.env.REACT_APP_BACKEND_PORT}/contact`, { id }, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -40,7 +40,7 @@ const ContactResponses = () => {
     }
 
     const DeleteContactData = (id) => {
-        axios.delete(`${process.env.REACT_BACKEND_PORT}/contact`, {id}, {
+        axios.delete(`${process.env.REACT_APP_BACKEND_PORT}/contact`, {id}, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'

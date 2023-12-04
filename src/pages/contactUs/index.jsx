@@ -18,12 +18,12 @@ const ContactUs = () => {
             subject: subject.current.value, 
             message: message.current.value
         }
-            axios.post(`${process.env.REACT_BACKEND_PORT}s/contact`, data , {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                }
-            }).then(res => alert("Submitted"));
+        axios.post(`${process.env.REACT_APP_BACKEND_PORT}/contact`, data , {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        }).then(res => alert("Submitted"));
     }
     return (
         <>
