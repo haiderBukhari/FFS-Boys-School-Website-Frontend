@@ -50,6 +50,7 @@ const Header = () => {
                                             <li className={`${Location.pathname === '/aa' ? 'active': ''}`}><Link to="#">Services </Link></li>
                                             <li className={`${Location.pathname === '/aa' ? 'active': ''}`}><Link to="#">Pages <i className="icofont-rounded-down"></i></Link>
                                                 <ul className="dropdown">
+                                                    <li><Link to="/contact-responses">Contact Responses</Link></li>
                                                     <li><Link to="404.html">404 Error</Link></li>
                                                 </ul>
                                             </li>

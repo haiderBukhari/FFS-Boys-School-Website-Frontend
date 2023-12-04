@@ -1,6 +1,6 @@
 import { CarouselHeader } from "./carouselHeader";
-import slider from "../assets/slider.jpg";
-import slider2 from "../assets/slider2.jpg";
+import slider from "../assets/img/sliders1.jpeg";
+import slider2 from "../assets/img/sliders2.png";
 import slider3 from "../assets/slider3.jpg";
 import { HeaderNews } from "./HeaderNews";
 
