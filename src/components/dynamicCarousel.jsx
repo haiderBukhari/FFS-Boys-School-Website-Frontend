@@ -1,7 +1,7 @@
 import { CarouselHeader } from "./carouselHeader";
 import slider from "../assets/img/sliders1.jpeg";
 import slider2 from "../assets/img/sliders2.png";
-import slider3 from "../assets/slider3.jpg";
+import slider3 from "../assets/img/sliders3.png";
 import { HeaderNews } from "./HeaderNews";
 
 const DynamicCarousel = () => {

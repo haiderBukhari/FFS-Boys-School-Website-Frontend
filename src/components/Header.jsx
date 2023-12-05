@@ -46,19 +46,27 @@ const Header = () => {
                                                 </ul>
                                             </li> */}
                                             <li className={`${Location.pathname === '/' ? 'active': ''}`}><a href="/">Home</a></li>
-                                            <li className={`${Location.pathname === '/do' ? 'active': ''}`}><Link to="#">Doctos </Link></li>
-                                            <li className={`${Location.pathname === '/aa' ? 'active': ''}`}><Link to="#">Services </Link></li>
-                                            <li className={`${Location.pathname === '/aa' ? 'active': ''}`}><Link to="#">Pages <i className="icofont-rounded-down"></i></Link>
+                                            <li className={`${Location.pathname === '/aa' ? 'active': ''}`}><Link to="#">Resources<i className="icofont-rounded-down"></i></Link>
+                                                <ul className="dropdown">
+                                                    <li><Link to="/contact-responses">Student Material</Link></li>
+                                                    <li><a href="/AdmissionForm.pdf">Admission Form</a></li>
+                                                </ul>
+                                            </li>
+                                            {/* <li className={`${Location.pathname === '/AdmissionForm.pdf' ? 'active': ''}`}><a href="AdmissionForm.pdf">Admission Form</a></li> */}
+                                            {/* <li className={`${Location.pathname === '/' ? 'active': ''}`}><Link to="/">Student Resources</Link></li> */}
+                                            <li className={`${Location.pathname === '/newsevents' ? 'active': ''}`}><Link to="/">News & Events</Link></li>
+                                            <li className={`${Location.pathname === '/login' ? 'active': ''}`}><Link to="/login">Login</Link></li>
+                                            {/* <li className={`${Location.pathname === '/aa' ? 'active': ''}`}><Link to="#">Pages <i className="icofont-rounded-down"></i></Link>
                                                 <ul className="dropdown">
                                                     <li><Link to="/contact-responses">Contact Responses</Link></li>
                                                     <li><Link to="404.html">404 Error</Link></li>
                                                 </ul>
-                                            </li>
-                                            <li><Link to="#">Blogs <i className="icofont-rounded-down"></i></Link>
+                                            </li> */}
+                                            {/* <li><Link to="#">Blogs <i className="icofont-rounded-down"></i></Link>
                                                 <ul className="dropdown">
                                                     <li><Link to="blog-single.html">Blog Details</Link></li>
                                                 </ul>
-                                            </li>
+                                            </li> */}
                                             <li className={`${Location.pathname === '/contact' ? 'active': ''}`}><Link to="/contact">Contact Us</Link></li>
                                         </ul>
                                     </nav>
