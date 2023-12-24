@@ -67,7 +67,7 @@ export const WriteToPrincipal = () => {
                                                 <option selected>Select Class</option>
                                                 {
                                                     new Array(10).fill(0).map((item, index)=>(
-                                                        <option key={Math.floor(Math.random() * 10000)} value={index + 1}>{index + 1}</option>
+                                                        <option key={index+1000} value={index + 1}>{index + 1}</option>
                                                     ))
                                                 }
                                             </select>

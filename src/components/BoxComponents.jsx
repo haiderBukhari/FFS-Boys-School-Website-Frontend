@@ -5,8 +5,8 @@ export const BoxComponents = React.memo(({ FeaturesArr }) => {
     return (
         <>
             {
-                FeaturesArr && FeaturesArr.map((item) => (
-                    <div key={Math.floor(Math.random()) * 1000000} style={{ backgroundColor: '#EFF5FF', margin: '10px 15px 20px 20px', borderRadius: '6px', maxWidth: '400px', transition: 'transform 0.3s ease-in-out' }} className="outer-component fadeInUp wow hover:scale-105 hover:shadow-md" data-wow-delay="0.3s">
+                FeaturesArr && FeaturesArr.map((item, index) => (
+                    <div key={index+80} style={{ backgroundColor: '#EFF5FF', margin: '10px 15px 20px 20px', borderRadius: '6px', maxWidth: '400px', transition: 'transform 0.3s ease-in-out' }} className="outer-component fadeInUp wow hover:scale-105 hover:shadow-md" data-wow-delay="0.3s">
                         <div className="inner-component p-3">
                             <div className='flex justify-center items-center' style={{
                                 padding: '20px', width:

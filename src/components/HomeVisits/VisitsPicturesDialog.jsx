@@ -1,7 +1,6 @@
 import React from 'react'
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
 import PropTypes from 'prop-types';
 import CloseIcon from '@mui/icons-material/Close';
 import SubImageCarousel from '../SubImagesCarousel';
@@ -10,16 +9,16 @@ export const VisitsPicturesDialog = React.memo(({ dialog, setDialog, selected, s
     return (
         <React.Fragment>
             <Dialog
-                open={dialog && selected}
+                open={dialog}
                 onClose={() => { setDialog(false); setSelected(null) }}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
                 <div className='flex justify-between items-center pr-5 flex-wrap'>
-                    <div id="alert-dialog-title" style={{color: "grey", margin: "14px 3px 10px 20px", width: "auto", fontSize: "22px"}}>
+                    <div id="alert-dialog-title" style={{ color: "grey", margin: "14px 3px 10px 20px", width: "auto", fontSize: "22px" }}>
                         {selected?.title}
                     </div>
-                    <CloseIcon style={{color: "grey", cursor: "pointer", display: `${window.innerWidth < 490 ? 'none' : ''}`}} onClick={() => { setDialog(false); setSelected(null) }}/>
+                    <CloseIcon style={{ color: "grey", cursor: "pointer", display: `${window.innerWidth < 490 ? 'none' : ''}` }} onClick={() => { setDialog(false); setSelected(null) }} />
                 </div>
                 <DialogContent>
                     <div className='max-w-lg' autoSlide={true} autoSlideInterval={3000}>

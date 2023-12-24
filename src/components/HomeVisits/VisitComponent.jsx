@@ -7,20 +7,20 @@ export const VisitComponent = React.memo(({ data, setSelected, setDialog }) => {
     return (
         <>
             {
-                data.map((item) => (
-                    <div key={item.id} className="single-clients" style={{ marginBottom: '20px' }}>
+                data.map((item, index) => (
+                    <div onClick={()=>{
+                        setSelected({
+                            date: item.date,
+                            title: item.title,
+                            text: item.text,
+                            images: item.images
+                        });
+                        setDialog(true);
+                    }} key={index} className="single-clients" style={{ marginBottom: '20px' }}>
                         <div className="bg-white">
                             <div style={{ boxShadow: "0px 0px 10px #00000014", transition: "all 0.4s ease", borderRadius: '10px', maxWidth: '350px', marginLeft: '10px', height: '520px' }} className="single-news hover:scale-105 hover:shadow-md">
                                 <div style={{ width: '350px' }} className="news-head">
-                                    <div onClick={()=>{
-                                            setSelected({
-                                                date: item.date,
-                                                title: item.title,
-                                                text: item.text,
-                                                images: item.images
-                                            });
-                                            setDialog(true);
-                                        }}  className="image-container cursor-default">
+                                    <div className="image-container cursor-default">
                                         <img className="rounded-md p-0" style={{ transition: "all 0.4s ease", height: "260px", width: "350px" }} src={item.img} alt="#" />
                                         <div className='detail-button cursor-pointer flex justify-center item-center'>
                                             <OpenInFullIcon style={{fontSize: "15px", marginRight: "10px"}}/>Show More

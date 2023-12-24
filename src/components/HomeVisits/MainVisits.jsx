@@ -52,7 +52,7 @@ export const MainVisits = React.memo(() => {
                 <div className="container bg-white">
                     <div className="row bg-white">
                         <div className="col-lg-12 col-md-12 col-12 bg-white">
-                            <div className="owl-carousel clients-slider bg-white m-auto">
+                            <div className="clients-slider bg-white">
                                 <VisitComponent data={data} setSelected={setSelected} setDialog={setDialog} />
                             </div>
                         </div>
@@ -60,7 +60,6 @@ export const MainVisits = React.memo(() => {
                 </div>
             </div>
             <VisitsPicturesDialog dialog={dialog} setDialog={setDialog} selected={selected} setSelected={setSelected} />
-            <p>aaaa</p>
         </>
     )
 });
