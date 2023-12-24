@@ -17,7 +17,7 @@ export const HeaderNews = () => {
                                             <span>Materials</span>
                                             <h4>Students Material</h4>
                                             <br />
-                                            <a href="#">LEARN MORE<i className="fa fa-long-arrow-right"></i></a>
+                                            <a href="/">LEARN MORE<i className="fa fa-long-arrow-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -32,7 +32,7 @@ export const HeaderNews = () => {
                                             <span>FFC News</span>
                                             <h4>Latest News and Events</h4>
                                             <br />
-                                            <a href="#">LEARN MORE<i className="fa fa-long-arrow-right"></i></a>
+                                            <a href="/">LEARN MORE<i className="fa fa-long-arrow-right"></i></a>
                                         </div>
                                     </div>
                                 </div>

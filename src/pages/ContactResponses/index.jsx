@@ -12,7 +12,7 @@ const ContactResponses = () => {
     const [loading, setLoading] = useState(false);
     const [open, setOpen] = useState(false);
     const [selectedData, setSelectedData] = useState({});
-    const [pagination, setPagination] = useState({
+    const [pagination, setPagination] = useState({ //eslint-disable-line
         page: 1,
         rowsPerPage: 10,
     });

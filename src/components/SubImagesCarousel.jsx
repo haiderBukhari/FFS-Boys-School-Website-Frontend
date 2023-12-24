@@ -18,7 +18,7 @@ export default function SubImageCarousel({
         if (!autoSlide) return
         const slideInterval = setInterval(next, autoSlideInterval)
         return () => clearInterval(slideInterval)
-    }, [])
+    }, []) //eslint-disable-line
     return (
         <div className="overflow-hidden relative">
             <div
