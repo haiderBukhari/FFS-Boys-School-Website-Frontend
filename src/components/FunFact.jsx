@@ -1,5 +1,6 @@
+import React from "react"
 import style from "./styles.module.css"
-export const FunFact = () => {
+export const FunFact = React.memo(() => {
     return (
         <div  id="fun-facts" className={`fun-facts section ${style.overlay} rounded-lg`} style={{margin: '20px 20px',  padding: '60px 10px 60px 40px', borderRadius: '20px', backgroundColor: '#1a76d1'}} >
 			<div className="container">
@@ -44,4 +45,4 @@ export const FunFact = () => {
 			</div>
 		</div>
     )
-}
+});

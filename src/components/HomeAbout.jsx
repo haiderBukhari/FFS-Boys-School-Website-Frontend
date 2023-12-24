@@ -1,8 +1,9 @@
+import React from "react"
 import aboutPic1 from "../assets/img/activity1.jpg"
 import aboutPic2 from "../assets/img/activity2.jpg"
 import aboutPic3 from "../assets/img/head.jfif"
 
-const HomeAbout = () => {
+const HomeAbout = React.memo(() => {
     return (
         <div className="container-xxl py-5 pt-0 wow fadeInUp" data-wow-delay="0.4s">
             <div className="container">
@@ -29,6 +30,5 @@ const HomeAbout = () => {
             </div>
         </div>
     )
-}
-
+});
 export default HomeAbout

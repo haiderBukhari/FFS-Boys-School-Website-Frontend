@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import visit1 from "../../assets/img/visits/Visit1/visit1.jpeg"
 import visit2 from "../../assets/img/visits/Visit2/visit2.jpeg"
 import visit21 from "../../assets/img/visits/Visit2/visit21.jpeg"
@@ -11,9 +11,9 @@ import visit31 from "../../assets/img/visits/Visit3/visit31.jpeg"
 import { VisitComponent } from "./VisitComponent"
 import { VisitsPicturesDialog } from "./VisitsPicturesDialog"
 
-export const MainVisits = () => {
+export const MainVisits = React.memo(() => {
     const [selected, setSelected] = useState(null);
-    const [dialog, setDialog] = useState(true);
+    const [dialog, setDialog] = useState(false);
     const data = [
         {
             id: 1,
@@ -60,6 +60,7 @@ export const MainVisits = () => {
                 </div>
             </div>
             <VisitsPicturesDialog dialog={dialog} setDialog={setDialog} selected={selected} setSelected={setSelected} />
+            <p>aaaa</p>
         </>
     )
-}
+});

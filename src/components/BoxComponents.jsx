@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
+import React from 'react';
 
-export const BoxComponents = ({ FeaturesArr }) => {
+export const BoxComponents = React.memo(({ FeaturesArr }) => {
     return (
         <>
             {
@@ -23,7 +24,7 @@ export const BoxComponents = ({ FeaturesArr }) => {
             }
         </>
     )
-}
+});
 
 BoxComponents.propTypes = {
     FeaturesArr: PropTypes.arrayOf(

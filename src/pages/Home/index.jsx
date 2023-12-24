@@ -47,7 +47,6 @@ const HomePage = () => {
         <>
             <DynamicCarousel />
             <HomeAbout />
-
             <div className="features">
                 <div className="flex justify-center">
                     <div style={{ border: '1px solid #ccc', padding: '6px 0', width: '120px', textAlign: 'center', borderRadius: '50rem', fontSize: '17px' }} className="box">Features</div>

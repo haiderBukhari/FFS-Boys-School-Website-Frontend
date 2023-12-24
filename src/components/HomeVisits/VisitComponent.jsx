@@ -1,19 +1,18 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Visits.css'
 import OpenInFullIcon from '@mui/icons-material/OpenInFull';
 
-export const VisitComponent = ({ data, setSelected, setDialog }) => {
+export const VisitComponent = React.memo(({ data, setSelected, setDialog }) => {
     return (
         <>
             {
                 data.map((item) => (
-                    <div key={Math.floor(Math.random() * 100000)} className="single-clients" style={{ marginBottom: '20px' }}>
+                    <div key={item.id} className="single-clients" style={{ marginBottom: '20px' }}>
                         <div className="bg-white">
                             <div style={{ boxShadow: "0px 0px 10px #00000014", transition: "all 0.4s ease", borderRadius: '10px', maxWidth: '350px', marginLeft: '10px', height: '520px' }} className="single-news hover:scale-105 hover:shadow-md">
                                 <div style={{ width: '350px' }} className="news-head">
-                                    <div className="image-container cursor-default">
-                                        <img className="rounded-md p-0" style={{ transition: "all 0.4s ease", height: "260px", width: "350px" }} src={item.img} alt="#" />
-                                        <div onClick={()=>{
+                                    <div onClick={()=>{
                                             setSelected({
                                                 date: item.date,
                                                 title: item.title,
@@ -21,7 +20,9 @@ export const VisitComponent = ({ data, setSelected, setDialog }) => {
                                                 images: item.images
                                             });
                                             setDialog(true);
-                                        }} className='detail-button cursor-pointer flex justify-center item-center'>
+                                        }}  className="image-container cursor-default">
+                                        <img className="rounded-md p-0" style={{ transition: "all 0.4s ease", height: "260px", width: "350px" }} src={item.img} alt="#" />
+                                        <div className='detail-button cursor-pointer flex justify-center item-center'>
                                             <OpenInFullIcon style={{fontSize: "15px", marginRight: "10px"}}/>Show More
                                         </div>
                                     </div>
@@ -40,8 +41,7 @@ export const VisitComponent = ({ data, setSelected, setDialog }) => {
             }
         </>
     )
-}
-
+})
 
 VisitComponent.propTypes = {
     data: PropTypes.arrayOf(

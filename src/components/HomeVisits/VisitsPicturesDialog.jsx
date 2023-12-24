@@ -1,51 +1,48 @@
 import React from 'react'
-import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import CloseIcon from '@mui/icons-material/Close';
+import SubImageCarousel from '../SubImagesCarousel';
 
-
-export const VisitsPicturesDialog = ({ dialog, setDialog, selected, setSelected }) => {
+export const VisitsPicturesDialog = React.memo(({ dialog, setDialog, selected, setSelected }) => {
     return (
         <React.Fragment>
             <Dialog
-                open={dialog}
-                onClose={()=>{setDialog(false)}}
+                open={dialog && selected}
+                onClose={() => { setDialog(false); setSelected(null) }}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
-                <DialogTitle id="alert-dialog-title">
-                    {"Use Google's location service?"}
-                </DialogTitle>
+                <div className='flex justify-between items-center pr-5 flex-wrap'>
+                    <div id="alert-dialog-title" style={{color: "grey", margin: "14px 3px 10px 20px", width: "auto", fontSize: "22px"}}>
+                        {selected?.title}
+                    </div>
+                    <CloseIcon style={{color: "grey", cursor: "pointer", display: `${window.innerWidth < 490 ? 'none' : ''}`}} onClick={() => { setDialog(false); setSelected(null) }}/>
+                </div>
                 <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
-                        Let Google help apps determine location. This means sending anonymous
-                        location data to Google, even when no apps are running.
-                    </DialogContentText>
+                    <div className='max-w-lg' autoSlide={true} autoSlideInterval={3000}>
+                        <SubImageCarousel>
+                            {selected?.images.map((image, index) => (
+                                <img src={image} alt="" />
+                            ))}
+                        </SubImageCarousel>
+                    </div>
                 </DialogContent>
-                <DialogActions>
-                    <Button onClick={()=>{setDialog(false)}}>Disagree</Button>
-                    <Button onClick={()=>{setDialog(false)}}autoFocus>
-                        Agree
-                    </Button>
-                </DialogActions>
             </Dialog>
         </React.Fragment>
     )
+});
+
+VisitsPicturesDialog.propTypes = {
+    dialog: PropTypes.bool.isRequired,
+    setDialog: PropTypes.func.isRequired,
+    selected: PropTypes.shape({
+        date: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+        images: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
+    }),
+    setSelected: PropTypes.func.isRequired
 }
-
-
-// VisitsPicturesDialog.propTypes = {
-//     dialog: PropTypes.bool.isRequired,
-//     setDialog: PropTypes.func.isRequired,
-//     selected: PropTypes.shape({
-//         date: PropTypes.string.isRequired,
-//         title: PropTypes.string.isRequired,
-//         text: PropTypes.string.isRequired,
-//         images: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
-//     }),
-//     setSelected: PropTypes.func.isRequired 
-// }

@@ -1,29 +1,7 @@
-import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './style.css'
 
-export const CarouselHeader = ({ title, description, link, image }) => {
-    const parts = title.split(/({[^}]*})/);
-    const [screenSize, setScreenSize] = useState(window.innerWidth);
-
-    useEffect(() => {
-        const handleResize = () => setScreenSize(window.innerWidth);
-        window.addEventListener('resize', handleResize);
-        handleResize();
-        return () => window.removeEventListener('resize', handleResize);
-        // eslint-disable-next-line
-    }, [window.innerWidth]);
-
-
-    const renderedText = parts.map((part) => {
-        if (part.startsWith('{') && part.endsWith('}')) {
-            const innerText = part.slice(1, -1);
-            return <span key={Math.floor(Math.random()) * 1000000}>{innerText}</span>;
-        } else {
-            return part;
-        }
-    });
-
+export const CarouselHeader = ({ image }) => {
     return (
         <div className="single-slider" id='sub-sliders' style={{ background: `url(${image})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
             <div className="container">
@@ -45,8 +23,5 @@ export const CarouselHeader = ({ title, description, link, image }) => {
 }
 
 CarouselHeader.propTypes = {
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
 };

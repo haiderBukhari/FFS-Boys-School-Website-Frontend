@@ -31,8 +31,8 @@ const Header = () => {
                     <div className="inner">
                         <div className="row flex items-center">
                             <div className="col-lg-3 col-md-0">
-                                <div className="logo" style={{ marginTop: '4px' }}>
-                                    <Link to="/"><img style={{ width: '150px' }} src={Logo} alt="#" /></Link>
+                                <div className="logo">
+                                    <Link to="/"><img style={{ width: '100px' }} src={Logo} alt="#" /></Link>
                                 </div>
                                 <div className="mobile-nav mt-10"></div>
                             </div>
