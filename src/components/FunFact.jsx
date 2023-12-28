@@ -28,7 +28,7 @@ export const FunFact = React.memo(() => {
 							<i className="icofont-simple-smile"></i>
 							<div className="content">
 								<span className="counter">30</span>
-								<p>Students to Teacher Ration</p>
+								<p>Students to Teacher Ratio</p>
 							</div>
 						</div>
 					</div>
@@ -37,7 +37,7 @@ export const FunFact = React.memo(() => {
 							<i className="icofont icofont-table"></i>
 							<div className="content">
 								<span className="counter">32</span>
-								<p></p>
+								<p>Top Acheivers</p>
 							</div>
 						</div>
 					</div>
