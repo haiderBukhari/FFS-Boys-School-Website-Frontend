@@ -1,5 +1,7 @@
 import React from "react"
 import aboutPic1 from "../assets/img/activity1.jpg"
+import { Image } from 'cloudinary-react';
+
 import aboutPic2 from "../assets/img/activity2.jpg"
 import aboutPic3 from "../assets/img/head.jfif"
 
@@ -19,7 +21,8 @@ const HomeAbout = React.memo(() => {
                                 <img style={{ margin: '0 auto 70px auto', height: 'auto' }} className="img-fluid w-75 rounded-circle bg-light p-3" src={aboutPic3} alt="" />
                             </div>
                             <div className="col-6 text-start" style={{ marginTop: '-150px' }}>
-                                <img className="img-fluid w-100 rounded-circle bg-light p-3" src={aboutPic1} alt="" />
+                                <Image className="img-fluid w-100 rounded-circle bg-light p-3" cloudName="dlv0dshiq" publicId="activity1_peghul" />
+                                {/* <img className="img-fluid w-100 rounded-circle bg-light p-3" src="https://res.cloudinary.com/dlv0dshiq/image/upload/v1703660164/activity1_peghul.jpg" alt="" /> */}
                             </div>
                             <div className="col-6 text-end" style={{ marginTop: '-150px' }}>
                                 <img className="img-fluid w-100 rounded-circle bg-light p-3" src={aboutPic2} alt="" />

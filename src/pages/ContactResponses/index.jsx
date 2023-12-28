@@ -24,14 +24,13 @@ const ContactResponses = () => {
     const getContactData = () => {
         setLoading(true);
         axios.get(`${process.env.REACT_APP_BACKEND_PORT}/contact?page=${pagination.page}&limit=${pagination.rowsPerPage}&viewed=${viewed}`).then(res => {
-            console.log(res.data.data)
             setContactData(res.data.data);
         }).catch(err => alert(err.message))
         setLoading(false);
     }
 
     const updateContactData = (id) => {
-        axios.patch(`${process.env.REACT_APP_BACKEND_PORT}/contact`, { id }, {
+        axios.patch(`${process.env.REACT_APP_BACKEND_PORT}/contact/?id=${id}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -40,7 +39,7 @@ const ContactResponses = () => {
     }
 
     const DeleteContactData = (id) => {
-        axios.delete(`${process.env.REACT_APP_BACKEND_PORT}/contact`, {id}, {
+        axios.delete(`${process.env.REACT_APP_BACKEND_PORT}/contact/?id=${id}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -95,9 +94,9 @@ const ContactResponses = () => {
                             <h1 className='mt-1'><span style={{ fontSize: "19px", fontWeight: 'bold' }}>Name</span>: <span style={{ marginLeft: '4px', fontSize: '17px' }}>{item.name}</span></h1>
                             <h1 className='mt-4'><span style={{ fontSize: "19px", fontWeight: 'bold' }}>Email</span>: <span style={{ marginLeft: '4px', fontSize: '17px' }}>{item.email}</span></h1>
                             <h1 className='mt-4'><span style={{ fontSize: "19px", fontWeight: 'bold' }}>PhoneNumber</span>: <span style={{ marginLeft: '4px', fontSize: '17px' }}>{item.phone}</span></h1>
-                            <button onClick={() => { setSelectedData(item); setOpen(true); !viewed && updateContactData(item._id); }} style={{ padding: '10px 15px', margin: '20px 0 0 0', backgroundColor: '#0688cf', color: "#fff", borderRadius: '8px' }}>View Message</button>
+                            <button onClick={() => { setSelectedData(item); setOpen(true); }} style={{ padding: '10px 15px', margin: '20px 0 0 0', backgroundColor: '#0688cf', color: "#fff", borderRadius: '8px' }}>View Message</button>
                             {
-                                item.viewed && <button onClick={()=>{DeleteContactData(item._id)}} style={{ padding: '10px 15px', margin: '20px 0 0 10px', backgroundColor: '#f24141', color: "#fff", borderRadius: '8px' }}>Delete Response</button>
+                                item.viewed && <button onClick={()=>{DeleteContactData(item?._id)}} style={{ padding: '10px 15px', margin: '20px 0 0 10px', backgroundColor: '#f24141', color: "#fff", borderRadius: '8px' }}>Delete Response</button>
                             }
                         </div>
                     ))
@@ -105,7 +104,7 @@ const ContactResponses = () => {
                 {
                     loading && <p>Loading...</p>
                 }
-                <ContactResponseDialog open={open} setOpen={setOpen} data={selectedData} />
+                <ContactResponseDialog open={open} setOpen={setOpen} data={selectedData} updateContactData={updateContactData}/>
             </div>
         </>
     )

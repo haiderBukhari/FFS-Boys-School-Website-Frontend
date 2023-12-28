@@ -6,6 +6,8 @@ import ContactUs from "../pages/contactUs"
 import { WriteToPrincipal } from "../pages/WriteToPrincipal"
 import Footer from "../components/Footer"
 import ContactResponses from './../pages/ContactResponses/index';
+import Login from "../components/Registeration/Login"
+import Register from "../components/Registeration/Register"
 const Routers = () => {
     return (
         <>
@@ -16,6 +18,8 @@ const Routers = () => {
                 <Route path="/contact" element={<ContactUs />} />
                 <Route path="/write-to-principal" element={<WriteToPrincipal />} />
                 <Route path="/contact-responses" element={<ContactResponses />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
             </Routes>
             <Footer/>
         </>
