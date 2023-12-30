@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './Login.css'
 import axios from 'axios';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
+import { useSelector, useDispatch } from "react-redux"
+import { addUserData } from '../../Interface/userDataSlice';
 
 const Login = () => {
     const initial = {
@@ -12,9 +14,11 @@ const Login = () => {
         status: false,
         message: ""
     }
+    
+    const state = useSelector(state => state.userData);
+    const dispatch = useDispatch();
     const [error, setError] = useState(errorInitial);
     const [useInfo, setUserInfo] = useState(initial);
-    const [useData, setUserData] = useState(null);
     const [isFocusedEmail, setIsFocusedEmail] = useState(false);
     const [isFocusedPassword, setIsFocusedPassword] = useState(false);
 
@@ -40,7 +44,18 @@ const Login = () => {
                 'Accept': 'application/json'
             }
         }).then((res) => {
-            setUserData(res.data.data);
+            const data = res.data.data;
+            const Userdata  = {
+                id: data._id,
+                title: data.title,
+                name: data.name,
+                email: data.email,
+                contactNumber: data.contactNumber,
+                assignedClasses: data.assignedClasses
+            }
+            dispatch(addUserData(Userdata));
+            localStorage.setItem('Token', res.data.token);
+            console.log(Userdata);
             setError(errorInitial);
         }).catch(err => {
             setError({

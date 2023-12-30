@@ -1,9 +1,17 @@
 import Logo from "../assets/Logo.png";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import LogoutIcon from '@mui/icons-material/Logout';
+import { removeUserData } from "../Interface/userDataSlice";
 
 const Header = () => {
     const Location = useLocation();
+    const userData = useSelector(state => state.userData);
+    const dispatch = useDispatch();
+    const handleLogout = () => {
+        dispatch(removeUserData());
+    }
     return (
         <header className="header" >
             <div className="topbar">
@@ -30,44 +38,46 @@ const Header = () => {
                 <div className="container">
                     <div className="inner">
                         <div className="row flex items-center">
-                            <div className="col-lg-3 col-md-0">
+                            <div className="col-lg-3 col-md-0 flex justify-between items-center" style={{ width: "100%" }}>
                                 <div className="logo">
                                     <Link to="/"><img style={{ width: '100px' }} src={Logo} alt="#" /></Link>
                                 </div>
-                                <div className="mobile-nav mt-10"></div>
+                                <div className="flex items-end">
+                                    {
+                                        userData.id && <div style={{ border: '1px solid #ccc', width: "36px", padding: "5px", borderRadius: "50%" }} className="flex justify-start items-end mx-4">
+                                            <LogoutIcon onClick={handleLogout} style={{ cursor: "pointer" }} />
+                                        </div>
+                                    }
+                                    <div className="mobile-nav mt-10"></div>
+                                </div>
                             </div>
                             <div className="col-lg-7" style={{ width: 'auto' }}>
                                 <div className="main-menu">
                                     <nav className="navigation">
                                         <ul className="nav menu">
-                                            {/* <li className="active"><Link to="#">Home <i className="icofont-rounded-down"></i></Link>
-                                                <ul className="dropdown">
-                                                    <li><Link to="index.html">Home Page 1</Link></li>
-                                                </ul>
-                                            </li> */}
-                                            <li className={`${Location.pathname === '/' ? 'active': ''}`}><a href="/">Home</a></li>
-                                            <li className={`${Location.pathname === '/aa' ? 'active': ''}`}><Link to="#">Resources<i className="icofont-rounded-down"></i></Link>
-                                                <ul className="dropdown">
-                                                    <li><Link to="/contact-responses">Student Material</Link></li>
-                                                    <li><a href="/AdmissionForm.pdf">Admission Form</a></li>
-                                                </ul>
-                                            </li>
-                                            {/* <li className={`${Location.pathname === '/AdmissionForm.pdf' ? 'active': ''}`}><a href="AdmissionForm.pdf">Admission Form</a></li> */}
-                                            {/* <li className={`${Location.pathname === '/' ? 'active': ''}`}><Link to="/">Student Resources</Link></li> */}
-                                            <li className={`${Location.pathname === '/newsevents' ? 'active': ''}`}><Link to="/">News & Events</Link></li>
-                                            <li className={`${Location.pathname === '/login' ? 'active': ''}`}><Link to="/login">Login</Link></li>
-                                            {/* <li className={`${Location.pathname === '/aa' ? 'active': ''}`}><Link to="#">Pages <i className="icofont-rounded-down"></i></Link>
-                                                <ul className="dropdown">
-                                                    <li><Link to="/contact-responses">Contact Responses</Link></li>
-                                                    <li><Link to="404.html">404 Error</Link></li>
-                                                </ul>
-                                            </li> */}
-                                            {/* <li><Link to="#">Blogs <i className="icofont-rounded-down"></i></Link>
-                                                <ul className="dropdown">
-                                                    <li><Link to="blog-single.html">Blog Details</Link></li>
-                                                </ul>
-                                            </li> */}
-                                            <li className={`${Location.pathname === '/contact' ? 'active': ''}`}><Link to="/contact">Contact Us</Link></li>
+                                            {
+                                                !userData.id && <>
+                                                    <li className={`${Location.pathname === '/' ? 'active' : ''}`}><a href="/">Home</a></li>
+                                                    <li className={`${Location.pathname === '/aa' ? 'active' : ''}`}><Link to="#">Students Resources<i className="icofont-rounded-down"></i></Link>
+                                                        <ul className="dropdown">
+                                                            <li><Link to="/contact-responses">Student Material</Link></li>
+                                                            <li><a href="/AdmissionForm.pdf">Admission Form</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li className={`${Location.pathname === '/newsevents' ? 'active' : ''}`}><Link to="/">News & Events</Link></li>
+                                                    <li className={`${Location.pathname === '/login' ? 'active' : ''}`}><Link to="/login">Login</Link></li>
+                                                    <li className={`${Location.pathname === '/contact' ? 'active' : ''}`}><Link to="/contact">Contact Us</Link></li>
+                                                </>
+                                            }
+                                            {
+                                                userData.id && <>
+                                                    <li className={`${Location.pathname === '/' ? 'active' : ''}`}><a href="/">Home</a></li>
+                                                    <li className={`${Location.pathname === '/faculty/notification' ? 'active' : ''}`}><Link to="/notification">Notfications</Link></li>
+                                                    <li className={`${Location.pathname === '/faculty-resources' ? 'active' : ''}`}><Link to="/faculty-resources">Faculty Resources</Link></li>
+                                                    <li className={`${Location.pathname === '/contact' ? 'active' : ''}`}><Link to="/contact">FeedBack</Link></li>
+                                                    <li className={`${Location.pathname === '/contact' ? 'active' : ''}`}><Link to="/contact">Contact Us</Link></li>
+                                                </>
+                                            }
                                         </ul>
                                     </nav>
                                 </div>

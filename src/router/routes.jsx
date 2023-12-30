@@ -8,6 +8,7 @@ import Footer from "../components/Footer"
 import ContactResponses from './../pages/ContactResponses/index';
 import Login from "../components/Registeration/Login"
 import Register from "../components/Registeration/Register"
+import { FacultyResources } from "../pages/FacultyResource"
 const Routers = () => {
     return (
         <>
@@ -20,6 +21,8 @@ const Routers = () => {
                 <Route path="/contact-responses" element={<ContactResponses />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/faculty-resources" element={<FacultyResources />} />
+                <Route path="*" element={"Page not Found"} />
             </Routes>
             <Footer/>
         </>
