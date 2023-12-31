@@ -24,19 +24,16 @@ const Header = () => {
             <div className="topbar">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-6 col-md-5 col-12">
-                            <ul className="top-link">
-                                <li><Link to="#">About</Link></li>
-                                <li><Link to="#">Doctors</Link></li>
-                                <li><Link to="#">Contact</Link></li>
-                                <li><Link to="#">FAQ</Link></li>
-                            </ul>
-                        </div>
-                        <div className="col-lg-6 col-md-7 col-12">
-                            <ul className="top-contact">
+                        <div className="flex justify-between items-center flex-wrap" style={{ width: "100%", padding: "0 0 0 20px" }}>
+                            <ul className="top-contact" style={{ float: "none" }}>
                                 <li><i className="fa fa-phone"></i>+880 1234 56789</li>
-                                <li><i className="fa fa-envelope"></i><Link to="mailto:support@yourmail.com">support@yourmail.com</Link></li>
+                                <li><i className="fa fa-envelope"></i><Link to="mailto:support@yourmail.com">vp@ffsboyswah@gmail.com</Link></li>
                             </ul>
+                            {
+                                userData.id && <div style={{ border: '1px solid #ccc', width: "36px", padding: "5px", borderRadius: "50%" }} className="flex justify-start items-end mx-4">
+                                    <LogoutIcon onClick={handleLogout} style={{ cursor: "pointer" }} />
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -45,16 +42,11 @@ const Header = () => {
                 <div className="container">
                     <div className="inner">
                         <div className="row flex items-center">
-                            <div className="col-lg-3 col-md-0 flex justify-between items-center" style={{ width: "100%" }}>
+                            <div className="col-lg-3 col-md-0" style={{ width: "100%" }}>
                                 <div className="logo">
                                     <Link to="/"><img style={{ width: '100px' }} src={Logo} alt="#" /></Link>
                                 </div>
-                                <div className="flex items-end">
-                                    {
-                                        userData.id && <div style={{ border: '1px solid #ccc', width: "36px", padding: "5px", borderRadius: "50%" }} className="flex justify-start items-end mx-4">
-                                            <LogoutIcon onClick={handleLogout} style={{ cursor: "pointer" }} />
-                                        </div>
-                                    }
+                                <div>
                                     <div className="mobile-nav mt-10"></div>
                                 </div>
                             </div>
@@ -65,9 +57,9 @@ const Header = () => {
                                             {
                                                 !userData.id && <>
                                                     <li className={`${Location.pathname === '/' ? 'active' : ''}`}><a href="/">Home</a></li>
-                                                    <li className={`${Location.pathname === '/aa' ? 'active' : ''}`}><Link to="#">Students Resources<i className="icofont-rounded-down"></i></Link>
+                                                    <li className={`${Location.pathname === '/student-resources' ? 'active' : ''}`}><Link to="/student-resources">Students Resources<i className="icofont-rounded-down"></i></Link>
                                                         <ul className="dropdown">
-                                                            <li><Link to="/contact-responses">Student Material</Link></li>
+                                                            <li><Link to="/student-resources">Teaching Material</Link></li>
                                                             <li><a href="/AdmissionForm.pdf">Admission Form</a></li>
                                                         </ul>
                                                     </li>
@@ -81,7 +73,7 @@ const Header = () => {
                                                     <li className={`${Location.pathname === '/' ? 'active' : ''}`}><a href="/">Home</a></li>
                                                     <li className={`${Location.pathname === '/admin-dashboard' ? 'active' : ''}`}><Link to="/admin-dashboard">Dashboard</Link></li>
                                                     {
-                                                        checkAdmin() ?  <li className={`${Location.pathname === '/register' ? 'active' : ''}`}><Link to="register">Register Faculty</Link></li> : <li className={`${Location.pathname === '/faculty-resources' ? 'active' : ''}`}><Link to="/faculty-resources">Faculty Resources</Link></li>
+                                                        checkAdmin() ? <li className={`${Location.pathname === '/register' ? 'active' : ''}`}><Link to="register">Register Faculty</Link></li> : <li className={`${Location.pathname === '/faculty-resources' ? 'active' : ''}`}><Link to="/faculty-resources">Faculty Resources</Link></li>
                                                     }
                                                     <li className={`${Location.pathname === '/feedback' ? 'active' : ''}`}><Link to="/feedback">FeedBack</Link></li>
                                                     <li className={`${Location.pathname === '/contact' ? 'active' : ''}`}><Link to="/contact">Contact Us</Link></li>

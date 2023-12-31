@@ -9,7 +9,7 @@ export const FunFact = React.memo(() => {
 						<div className="single-fun">
 							<i className="icofont icofont-home"></i>
 							<div className="content">
-								<span className="counter">3468</span>
+								<span className="counter">900</span>
 								<p>Number of Students</p>
 							</div>
 						</div>
@@ -18,7 +18,7 @@ export const FunFact = React.memo(() => {
 						<div className="single-fun">
 							<i className="icofont icofont-user-alt-3"></i>
 							<div className="content">
-								<span className="counter">557</span>
+								<span className="counter">30</span>
 								<p>Number of Teacher</p>
 							</div>
 						</div>

@@ -2,7 +2,6 @@
     "classList": {
         "P.G": ["Arts", "Maths", "English", "Urdu", "General Knowledge"],
         "Nursery": ["Arts", "Maths", "English", "Urdu", "General Knowledge"],
-        "Prep": ["Arts", "Maths", "English", "Urdu", "General Knowledge"],
         "1": ["English", "Urdu", "Maths", "Computer Science", "General Knowledge", "Holy Quran", "Islamiat", "Arts"],
         "2": ["English", "Urdu", "Maths", "Computer Science", "General Knowledge", "Holy Quran", "Islamiat", "Arts"],
         "3": ["English", "Urdu", "Maths", "Computer Science", "General Knowledge", "Holy Quran", "Islamiat", "Arts"],
@@ -11,6 +10,7 @@
         "6": ["English", "Urdu", "Maths", "Computer Science", "Science", "Holy  Quran", "Islamiat", "Social Studies"],
         "7": ["English", "Urdu", "Maths", "Computer Science", "Science", "Holy  Quran", "Islamiat", "Social Studies"],
         "8": ["English", "Urdu", "Maths", "Computer Science", "Science", "Holy  Quran", "Islamiat", "Social Studies"],
+        "Prep": ["Arts", "Maths", "English", "Urdu", "General Knowledge"],
         "9": ["Islamic Studies", "Urdu", "Pakistan Studies" , "Computer Science", "Biology", "Physics" , "Chemistry" , "Mathematics" , "English"],
         "10": ["Islamic Studies" , "Urdu", "Pakistan Studies" , "Computer Science", "Biology", "Physics" , "Chemistry" , "Mathematics" , "English"]
     }

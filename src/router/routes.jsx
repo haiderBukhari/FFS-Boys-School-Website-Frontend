@@ -11,6 +11,8 @@ import Register from "../components/Registeration/Register"
 import { FacultyResources } from "../pages/FacultyResource"
 import RegisteredFaculty from "../components/RegisteredFaculty,jsx/Faculty"
 import Feedback from "../components/Feedback"
+import StudentResources from "../pages/StudentResources"
+
 const Routers = () => {
     return (
         <>
@@ -25,6 +27,7 @@ const Routers = () => {
                 <Route path="/register" element={<Register />} />
                 <Route path="/admin-dashboard" element={<RegisteredFaculty />} />
                 <Route path="/faculty-resources" element={<FacultyResources />} />
+                <Route path="/student-resources" element={<StudentResources />} />
                 <Route path="/feedback" element={<Feedback />} />
                 <Route path="*" element={"Page not Found"} />
             </Routes>

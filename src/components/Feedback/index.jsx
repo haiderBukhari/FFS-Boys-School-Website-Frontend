@@ -7,19 +7,37 @@ import good from "../../assets/emojis/good.png"
 import excellent from "../../assets/emojis/excellent.png"
 import StarIcon from '@mui/icons-material/Star';
 import { SuccesToast, ErrorToast } from '../ReactToast'
+import axios from 'axios';
+import { useSelector } from "react-redux"
 
 const Feedback = () => {
     const [colors, setColors] = useState(['e4e4e4', 'e4e4e4', 'e4e4e4', 'e4e4e4', 'e4e4e4'])
     const [tranform, setTranform] = useState([false, false, false, false, false])
     const [rating, setRating] = useState(null);
     const [message, setMessage] = useState("");
+    const [FacultyName, setFacultyName] = useState(useSelector(state => state.userData.name)); //eslint-disable-line
     const submitFeedback = () => {
-        if(!rating){
+        if (!rating) {
             return ErrorToast("Please Select Rating");
         }
-        else if(!message){
+        else if (!message) {
             return ErrorToast("Please write Feedback");
         }
+        axios.post(`${process.env.REACT_APP_BACKEND_PORT}/feedback`, {
+            rating,
+            facultyName: FacultyName,
+            message
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        }).then((res)=>{
+            SuccesToast("Feedback Submitted Successfully")
+        }).catch((err)=>{
+            ErrorToast("Error in Sending Feedback")
+        });
+
         return SuccesToast("Feedback Submitted Succesfully");
     }
     return (
@@ -53,7 +71,7 @@ const Feedback = () => {
                                 setColors(['#e4e4e4', '#e4e4e4', '#e4e4e4', '#e4e4e4', '#ffd93b']); setTranform([false, false, false, false, true]); setRating(5);
                             }} style={{ color: `${colors[4]}` }} className='fas-stars' />
                         </div>
-                        <textarea onChange={(e)=>{setMessage(e.target.value)}}  rows="4" style={{width: "400px", marginTop: "20px", outline: "1px solid #ccc", padding: "10px"}} value={message|| ""} placeholder='Feedback...'></textarea>
+                        <textarea onChange={(e) => { setMessage(e.target.value) }} rows="4" style={{ width: "400px", marginTop: "20px", outline: "1px solid #ccc", padding: "10px" }} value={message || ""} placeholder='Feedback...'></textarea>
                         <div className='feedback-button'>
                             <button onClick={submitFeedback}>Submit</button>
                         </div>

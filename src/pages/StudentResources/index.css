@@ -1,0 +1,22 @@
+/* Add the following styles to your CSS */
+
+.icon-cell:hover .hover-icon {
+    visibility: visible;
+}
+
+.hover-icon {
+    transition: visibility 0.3s;
+}
+
+.Resources{
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
