@@ -6,6 +6,8 @@ import { BrowserRouter } from 'react-router-dom'
 import { ScrollToTop } from './scrollToTop.jsx'
 import { Provider } from "react-redux"
 import store from "./Store/store.jsx"
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +15,7 @@ root.render(
     <BrowserRouter>
       <Provider store={store}>
         <App />
+        <ToastContainer />
       </Provider>
       <ScrollToTop />
     </BrowserRouter>

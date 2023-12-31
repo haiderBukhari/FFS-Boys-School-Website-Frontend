@@ -1,16 +1,23 @@
 import Logo from "../assets/Logo.png";
 import { Link } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { removeUserData } from "../Interface/userDataSlice";
 
 const Header = () => {
     const Location = useLocation();
+    const Navigate = useNavigate();
     const userData = useSelector(state => state.userData);
     const dispatch = useDispatch();
+
     const handleLogout = () => {
         dispatch(removeUserData());
+        localStorage.removeItem('Token');
+        Navigate('/');
+    }
+    const checkAdmin = () => {
+        return userData.email === 'admin@gmail.com';
     }
     return (
         <header className="header" >
@@ -72,9 +79,11 @@ const Header = () => {
                                             {
                                                 userData.id && <>
                                                     <li className={`${Location.pathname === '/' ? 'active' : ''}`}><a href="/">Home</a></li>
-                                                    <li className={`${Location.pathname === '/faculty/notification' ? 'active' : ''}`}><Link to="/notification">Notfications</Link></li>
-                                                    <li className={`${Location.pathname === '/faculty-resources' ? 'active' : ''}`}><Link to="/faculty-resources">Faculty Resources</Link></li>
-                                                    <li className={`${Location.pathname === '/contact' ? 'active' : ''}`}><Link to="/contact">FeedBack</Link></li>
+                                                    <li className={`${Location.pathname === '/admin-dashboard' ? 'active' : ''}`}><Link to="/admin-dashboard">Dashboard</Link></li>
+                                                    {
+                                                        checkAdmin() ?  <li className={`${Location.pathname === '/register' ? 'active' : ''}`}><Link to="register">Register Faculty</Link></li> : <li className={`${Location.pathname === '/faculty-resources' ? 'active' : ''}`}><Link to="/faculty-resources">Faculty Resources</Link></li>
+                                                    }
+                                                    <li className={`${Location.pathname === '/feedback' ? 'active' : ''}`}><Link to="/feedback">FeedBack</Link></li>
                                                     <li className={`${Location.pathname === '/contact' ? 'active' : ''}`}><Link to="/contact">Contact Us</Link></li>
                                                 </>
                                             }

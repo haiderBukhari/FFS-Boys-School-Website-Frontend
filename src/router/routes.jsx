@@ -9,6 +9,8 @@ import ContactResponses from './../pages/ContactResponses/index';
 import Login from "../components/Registeration/Login"
 import Register from "../components/Registeration/Register"
 import { FacultyResources } from "../pages/FacultyResource"
+import RegisteredFaculty from "../components/RegisteredFaculty,jsx/Faculty"
+import Feedback from "../components/Feedback"
 const Routers = () => {
     return (
         <>
@@ -21,7 +23,9 @@ const Routers = () => {
                 <Route path="/contact-responses" element={<ContactResponses />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/admin-dashboard" element={<RegisteredFaculty />} />
                 <Route path="/faculty-resources" element={<FacultyResources />} />
+                <Route path="/feedback" element={<Feedback />} />
                 <Route path="*" element={"Page not Found"} />
             </Routes>
             <Footer/>
