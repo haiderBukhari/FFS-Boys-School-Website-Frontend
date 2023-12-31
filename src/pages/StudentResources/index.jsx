@@ -9,7 +9,7 @@ const StudentResources = () => {
     const classList = classListData.classList;
     const [selectedClass, setSelectedClass] = useState(null);
     const [selectedSubject, setSelectedSubject] = useState(null);
-    const [selectedFaculty, setSelectedFaculty] = useState(null);
+    const [selectedFaculty, setSelectedFaculty] = useState(null); //eslint-disable-line
     const [allFaculties, setAllFaculties] = useState(null);
     const handleRowClick = (className) => {
         setSelectedClass(className === selectedClass ? null : className);
@@ -28,9 +28,9 @@ const StudentResources = () => {
             // alert('error');
         })
     }
-    const moveToTop = () => {
+    // const moveToTop = () => {
         
-    }
+    // }
     const renderTableRows = () => {
         return Object.keys(classList).map((Item, index) => (
             <tr
