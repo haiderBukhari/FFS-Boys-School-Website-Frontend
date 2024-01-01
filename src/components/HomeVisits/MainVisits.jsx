@@ -19,23 +19,23 @@ export const MainVisits = React.memo(() => {
             id: 1,
             date: "22 Aug, 2020",
             img: visit1,
-            title: "Visit of Respected Ex Dir FF Edn Gen Naseer.",
-            text: "Honourable Ex Dir FF Edn Gen Naseer visiting FFS Boys Wah",
+            title: "Visit of Respected Ex Director FFES Maj Gen Naseer Ali Khan (Retd).",
+            text: "Honourable Ex Director FFES Maj Gen Naseer Ali Khan visiting FFS Boys Wah",
             images: [visit1]
         },
         {
             id: 2,
             date: "22 Aug, 2020",
             img: visit2,
-            title: "Visit of worthy GM Brig Asim.",
-            text: "Worthy GM Brig Asim SM, HR Col Noman Bukhari, DM edu Zahoor Ahmad, Ex ZH Col M Ikram and Administrator FCCL shools Maj Shahid visiting senior Section of FFS Boys Wah With P & VP",
+            title: "Visit of worthy General Manager(Education) Brig Asim Siddiqui, SI(M) (Retd).",
+            text: "Worthy GM Brig Asim Siddiqui, SI(M), HR Col Noman Bukhari, DM edu Zahoor Ahmad, Ex ZH Col M Ikram and Administrator FCCL shools Maj Shahid visiting senior Section of FFS Boys Wah With P & VP",
             images: [visit2, visit21, visit22, visit23, visit24]
         },
         {
             id: 3,
             date: "22 Aug, 2020",
             img: visit3,
-            title: "Visit of Honourable Col Noman Bukhari.",
+            title: "Visit of Honourable Sr Manager Col Nauman Bukhari (Retd).",
             text: "Honourable Col Noman Bukhari verifying teacher's data during visit.",
             images: [visit3, visit31]
         }
