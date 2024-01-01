@@ -9,12 +9,14 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import FeedIcon from '@mui/icons-material/Feed';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import ChatIcon from '@mui/icons-material/Chat';
+
+
 const HomePage = () => {
     const FeaturesArr = [
         {
             icon: <MenuBookIcon style={{ color: '#0463FA', fontSize: '35px' }} />,
-            heading: "Professional Courses",
-            text: "We have foundation institutes of technology having special focus on technical education. We offer professional courses to enhance technical skills of students."
+            heading: "Equipped Computer labs",
+            text: "We have fully equipped computer labs to enhance  technical skills."
         },
         {
             icon: <PeopleIcon style={{ color: '#0463FA', fontSize: '35px' }} />,
@@ -34,8 +36,8 @@ const HomePage = () => {
         },
         {
             icon: <LocalLibraryIcon style={{ color: '#0463FA', fontSize: '35px' }} />,
-            heading: "Study Abroad",
-            text: "We provide opportunities to our students to study abroad. So far 143 Fauji Foundation students have availed the scholarship including 4 students presently studying in USA."
+            heading: "Profesional guidance",
+            text: "We provide guidance and counselling  for profesional growth. Career planning and admision in national and international institutes to our students."
         },
         {
             icon: <ChatIcon style={{ color: '#0463FA', fontSize: '35px' }} />,
