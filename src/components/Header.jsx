@@ -26,8 +26,8 @@ const Header = () => {
                     <div className="row">
                         <div className="flex justify-between items-center flex-wrap" style={{ width: "100%", padding: "0 0 0 20px" }}>
                             <ul className="top-contact" style={{ float: "none" }}>
-                                <li><i className="fa fa-phone"></i>+880 1234 56789</li>
-                                <li><i className="fa fa-envelope"></i><Link to="mailto:support@yourmail.com">vp@ffsboyswah@gmail.com</Link></li>
+                                <li><i className="fa fa-phone"></i>(051) 4937002</li>
+                                <li><i className="fa fa-envelope"></i><Link to="mailto:vp@ffsboyswah@gmail.com">vp@ffsboyswah@gmail.com</Link></li>
                             </ul>
                             {
                                 userData.id && <div style={{ border: '1px solid #ccc', width: "36px", padding: "5px", borderRadius: "50%" }} className="flex justify-start items-end mx-4">

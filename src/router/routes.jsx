@@ -12,6 +12,7 @@ import { FacultyResources } from "../pages/FacultyResource"
 import RegisteredFaculty from "../components/RegisteredFaculty,jsx/Faculty"
 import Feedback from "../components/Feedback"
 import StudentResources from "../pages/StudentResources"
+import AlternateFooter from "../components/Footer/alternateFooter"
 
 const Routers = () => {
     return (
@@ -31,7 +32,8 @@ const Routers = () => {
                 <Route path="/feedback" element={<Feedback />} />
                 <Route path="*" element={"Page not Found"} />
             </Routes>
-            <Footer/>
+            {/* <Footer/> */}
+            <AlternateFooter/>
         </>
     )
 }
