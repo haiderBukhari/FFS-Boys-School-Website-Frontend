@@ -4,7 +4,6 @@ import HomePage from "../pages/Home"
 // import Blogs from "../pages/Blogs"
 import ContactUs from "../pages/contactUs"
 import { WriteToPrincipal } from "../pages/WriteToPrincipal"
-import Footer from "../components/Footer"
 import ContactResponses from './../pages/ContactResponses/index';
 import Login from "../components/Registeration/Login"
 import Register from "../components/Registeration/Register"
@@ -12,7 +11,9 @@ import { FacultyResources } from "../pages/FacultyResource"
 import RegisteredFaculty from "../components/RegisteredFaculty,jsx/Faculty"
 import Feedback from "../components/Feedback"
 import StudentResources from "../pages/StudentResources"
-import AlternateFooter from "../components/Footer/alternateFooter"
+import Footer from "../components/Footer/alternateFooter"
+import FacultyMaterial from "../pages/FacultyMaterials/material"
+import FacultyUploadMaterial from "../pages/FacultyResource/uploadResources"
 
 const Routers = () => {
     return (
@@ -26,16 +27,16 @@ const Routers = () => {
                 <Route path="/contact-responses" element={<ContactResponses />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/admin-dashboard" element={<RegisteredFaculty />} />
-                <Route path="/faculty-resources" element={<FacultyResources />} />
-                <Route path="/student-resources" element={<StudentResources />} />
+                <Route path="/admin/dashboard" element={<RegisteredFaculty />} />
+                <Route path="/faculty/dashboard" element={<FacultyResources />} />
+                <Route path="/students/resources" element={<StudentResources />} />
                 <Route path="/feedback" element={<Feedback />} />
+                <Route path="/faculty/resources/:Facultyclass/:subject/:id" element={<FacultyMaterial/>} />
+                <Route path="/faculty/upload/resources/:Facultyclass/:subject/:id" element={<FacultyUploadMaterial/>} />
                 <Route path="*" element={"Page not Found"} />
             </Routes>
-            {/* <Footer/> */}
-            <AlternateFooter/>
+            <Footer/>
         </>
     )
 }
-
 export default Routers

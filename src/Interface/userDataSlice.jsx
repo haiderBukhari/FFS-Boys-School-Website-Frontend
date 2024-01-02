@@ -18,7 +18,6 @@ const userDataSlice = createSlice({
         addUserData: (state, action) => {
             localStorage.setItem("userData", JSON.stringify(action.payload));
             return {
-                ...state,
                 id: action.payload.id,
                 title: action.payload.title,
                 name: action.payload.name,
@@ -29,7 +28,14 @@ const userDataSlice = createSlice({
         },
         removeUserData: (state, action) => {
             localStorage.removeItem('userData');
-            return initialState;
+            return {
+                id: null,
+                title: "",
+                name: "",
+                email: "",
+                contactNumber: "",
+                assignedClasses: [],
+            }
         }
     }
 });

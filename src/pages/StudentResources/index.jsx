@@ -4,8 +4,10 @@ import './index.css'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import axios from 'axios';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { useNavigate } from 'react-router-dom';
 
 const StudentResources = () => {
+    const Navigate = useNavigate();
     const classList = classListData.classList;
     const [selectedClass, setSelectedClass] = useState(null);
     const [selectedSubject, setSelectedSubject] = useState(null);
@@ -17,20 +19,12 @@ const StudentResources = () => {
     const handleRowClick1 = (subjectName) => {
         setSelectedSubject(subjectName === selectedSubject ? null : subjectName);
     };
-    const handleRowClick2 = (FacultyData) => {
-        setSelectedFaculty(FacultyData === selectedSubject ? null : FacultyData);
-    };
     const getFacultyList = (Item) => {
         axios.get(`${process.env.REACT_APP_BACKEND_PORT}/getFaculty?class=${selectedClass}&subject=${Item}`).then((res)=>{
             setAllFaculties(res.data.data);
-            // alert('success');
         }).catch((err)=>{
-            // alert('error');
         })
     }
-    // const moveToTop = () => {
-        
-    // }
     const renderTableRows = () => {
         return Object.keys(classList).map((Item, index) => (
             <tr
@@ -74,8 +68,7 @@ const StudentResources = () => {
                 key={index}
                 className={Item === setSelectedFaculty ? 'selected' : ''}
                 onClick={() => {
-                    handleRowClick2(Item);
-                    // getFacultyList(Item)
+                    Navigate(`/faculty/resources/${selectedClass}/${selectedSubject}/${Item.name}/${Item._id}`)
                 }}
                 style={{ cursor: 'pointer' }}
             >

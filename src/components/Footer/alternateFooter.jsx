@@ -1,6 +1,6 @@
 import './footer.css'
 
-const AlternateFooter = () => {
+const Footer = () => {
     return (
         <div>
             <div className="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
@@ -24,7 +24,7 @@ const AlternateFooter = () => {
                             <a className="btn btn-link bg-transparent" href="/contact">Contact Us</a>
                             <a className="btn btn-link bg-transparent" href="/">Features</a>
                             <a className="btn btn-link bg-transparent" href="/">Terms & Condition</a>
-                            <a className="btn btn-link bg-transparent" href="/student-resources">Teaching Resources</a>
+                            <a className="btn btn-link bg-transparent" href="/students/resources">Teaching Resources</a>
                         </div>
                         <div className="col-md-6 col-lg-3 bg-transparent">
                             <h4 className="text-white mb-4" style={{fontFamily: "poppins", fontSize: "19px", fontWeight: "600"}}>Popular Link</h4>
@@ -57,4 +57,4 @@ const AlternateFooter = () => {
     )
 }
 
-export default AlternateFooter
+export default Footer

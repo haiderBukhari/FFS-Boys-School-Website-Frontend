@@ -21,5 +21,14 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "web_accessible_resources": [
+    "favicon.ico",
+    "logo192.png",
+    "logo512.png",
+    "static/css/*.css",
+    "static/js/*.js",
+    "static/media/*",
+    "src/assets/locales/en/translation.json"
+  ]  
 }

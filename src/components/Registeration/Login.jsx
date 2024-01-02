@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Login.css'
 import axios from 'axios';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
-import { useSelector, useDispatch } from "react-redux"
+import {  useDispatch } from "react-redux"
 import { addUserData } from '../../Interface/userDataSlice';
 import { useNavigate } from 'react-router-dom';
 import { SuccesToast, ErrorToast } from './../ReactToast';
@@ -18,7 +18,6 @@ const Login = () => {
         message: ""
     }
     
-    const userEmail = useSelector(state => state.userData.email);
     const dispatch = useDispatch();
     const [error, setError] = useState(errorInitial);
     const [useInfo, setUserInfo] = useState(initial);
@@ -61,10 +60,10 @@ const Login = () => {
             SuccesToast("Logined Succesfully");
             setError(errorInitial);
             if(data.email === "admin@gmail.com"){
-                Navigate('/register')
+                Navigate('/admin/dashboard')
             }
             else{
-                Navigate('/faculty-resources')
+                Navigate('/faculty/dashboard')
             }
         }).catch(err => {
             setError({

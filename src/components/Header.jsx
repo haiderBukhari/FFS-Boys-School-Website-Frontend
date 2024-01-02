@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { removeUserData } from "../Interface/userDataSlice";
+import { SuccesToast } from "./ReactToast";
 
 const Header = () => {
     const Location = useLocation();
@@ -14,7 +15,8 @@ const Header = () => {
     const handleLogout = () => {
         dispatch(removeUserData());
         localStorage.removeItem('Token');
-        Navigate('/');
+        Navigate('/login');
+        SuccesToast('Logged Out');
     }
     const checkAdmin = () => {
         return userData.email === 'admin@gmail.com';
@@ -57,9 +59,9 @@ const Header = () => {
                                             {
                                                 !userData.id && <>
                                                     <li className={`${Location.pathname === '/' ? 'active' : ''}`}><a href="/">Home</a></li>
-                                                    <li className={`${Location.pathname === '/student-resources' ? 'active' : ''}`}><Link to="/student-resources">Students Resources<i className="icofont-rounded-down"></i></Link>
+                                                    <li className={`${Location.pathname === '/students/resources' ? 'active' : ''}`}><Link to="/students/resources">Students Resources<i className="icofont-rounded-down"></i></Link>
                                                         <ul className="dropdown">
-                                                            <li><Link to="/student-resources">Teaching Material</Link></li>
+                                                            <li><Link to="/students/resources">Teaching Material</Link></li>
                                                             <li><a href="/AdmissionForm.pdf">Admission Form</a></li>
                                                         </ul>
                                                     </li>
@@ -71,9 +73,9 @@ const Header = () => {
                                             {
                                                 userData.id && <>
                                                     <li className={`${Location.pathname === '/' ? 'active' : ''}`}><a href="/">Home</a></li>
-                                                    <li className={`${Location.pathname === '/admin-dashboard' ? 'active' : ''}`}><Link to="/admin-dashboard">Dashboard</Link></li>
+                                                    <li className={`${Location.pathname === '/admin/dashboard' ? 'active' : ''}`}><Link to="/admin/dashboard">Dashboard</Link></li>
                                                     {
-                                                        checkAdmin() ? <li className={`${Location.pathname === '/register' ? 'active' : ''}`}><Link to="register">Register Faculty</Link></li> : <li className={`${Location.pathname === '/faculty-resources' ? 'active' : ''}`}><Link to="/faculty-resources">Faculty Resources</Link></li>
+                                                        checkAdmin() ? <li className={`${Location.pathname === '/register' ? 'active' : ''}`}><Link to="register">Register Faculty</Link></li> : <li className={`${Location.pathname === '/faculty/dashboard' ? 'active' : ''}`}><Link to="/faculty/dashboard">Faculty Dashboard</Link></li>
                                                     }
                                                     <li className={`${Location.pathname === '/feedback' ? 'active' : ''}`}><Link to="/feedback">FeedBack</Link></li>
                                                     <li className={`${Location.pathname === '/contact' ? 'active' : ''}`}><Link to="/contact">Contact Us</Link></li>
