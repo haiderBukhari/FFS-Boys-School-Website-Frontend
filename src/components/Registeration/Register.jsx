@@ -4,12 +4,13 @@ import axios from "axios"
 import { SuccesToast, ErrorToast } from './../ReactToast';
 
 const Register = () => {
-    const [userData, setUserData] = useState({
+    const temp = {
         name: "",
         email: "",
         title: "",
         password: ""
-    });
+    }
+    const [userData, setUserData] = useState(temp);
 
     const SubmitRegisteration = (e) => {
         e.preventDefault();
@@ -17,13 +18,12 @@ const Register = () => {
             return ErrorToast("Please Fill All Fields")
         }
         const FinalData = {...userData};
-        console.log(FinalData);
         axios.post(`${process.env.REACT_APP_BACKEND_PORT}/register`, FinalData, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
-        }).then(res=>SuccesToast("Accessed Given Successfully")).catch(err=>ErrorToast("Error in Giving Access"));
+        }).then(res=>{SuccesToast("Accessed Given Successfully"); setUserData(temp)}).catch(err=>ErrorToast("Error in Giving Access"));
     }
     
 
