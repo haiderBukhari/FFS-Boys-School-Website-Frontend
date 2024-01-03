@@ -37,8 +37,6 @@ const Feedback = () => {
         }).catch((err)=>{
             ErrorToast("Error in Sending Feedback")
         });
-
-        return SuccesToast("Feedback Submitted Succesfully");
     }
     return (
         <div style={{ margin: "10px 20px" }}>
@@ -71,7 +69,7 @@ const Feedback = () => {
                                 setColors(['#e4e4e4', '#e4e4e4', '#e4e4e4', '#e4e4e4', '#ffd93b']); setTranform([false, false, false, false, true]); setRating(5);
                             }} style={{ color: `${colors[4]}` }} className='fas-stars' />
                         </div>
-                        <textarea onChange={(e) => { setMessage(e.target.value) }} rows="4" style={{ width: "400px", marginTop: "20px", outline: "1px solid #ccc", padding: "10px" }} value={message || ""} placeholder='Feedback...'></textarea>
+                        <textarea className='text-area-1' onChange={(e) => { setMessage(e.target.value) }} rows="4" style={{ marginTop: "20px", outline: "1px solid #ccc", padding: "10px" }} value={message || ""} placeholder='Feedback...'></textarea>
                         <div className='feedback-button'>
                             <button onClick={submitFeedback}>Submit</button>
                         </div>

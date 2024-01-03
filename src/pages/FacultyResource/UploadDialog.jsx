@@ -22,6 +22,7 @@ const UploadDialog = ({ open, setOpen, id, subject, Facultyclass, fetchAgain, se
     const Navigate = useNavigate();
     const facultyId = useSelector(state=>state.userData.id);
     const facultyName = useSelector(state=>state.userData.name);
+    const facultyTitle = useSelector(state=>state.userData.title);
 
     if(facultyId !== id){
         Navigate('/error');
@@ -37,6 +38,7 @@ const UploadDialog = ({ open, setOpen, id, subject, Facultyclass, fetchAgain, se
                 subject: subject,
                 class: Facultyclass,
                 name: facultyName,
+                Facultytitle: facultyTitle,
                 title: title,
                 link: link,
                 description: description,
