@@ -9,7 +9,7 @@ const Register = () => {
         email: "",
         title: "",
         password: ""
-    }
+    };
     const [userData, setUserData] = useState(temp);
 
     const SubmitRegisteration = (e) => {
@@ -18,6 +18,7 @@ const Register = () => {
             return ErrorToast("Please Fill All Fields")
         }
         const FinalData = {...userData};
+        console.log(FinalData);
         axios.post(`${process.env.REACT_APP_BACKEND_PORT}/register`, FinalData, {
             headers: {
                 'Content-Type': 'application/json',
@@ -26,7 +27,6 @@ const Register = () => {
         }).then(res=>{SuccesToast("Accessed Given Successfully"); setUserData(temp)}).catch(err=>ErrorToast("Error in Giving Access"));
     }
     
-
     return (
         <div className='login-main-container'>
             <div className="logincontainer" id="logincontainer">
@@ -49,14 +49,14 @@ const Register = () => {
                                     ...prevData,
                                     name: e.target.value
                                 }))
-                            }} style={{ width: "100%" }} type="text" placeholder="Full Name" />
+                            }} style={{ width: "100%" }} type="text" placeholder="Full Name" value={userData.name} />
                         </div>
                         <input onChange={(e) => {
                             setUserData((prevData) => ({
                                 ...prevData,
                                 email: e.target.value
                             }))
-                        }} type="email" placeholder="Email" />
+                        }} type="email" placeholder="Email" value={userData.email} />
                         <button style={{marginTop: "20px", marginBottom: "20px"}} onClick={SubmitRegisteration}>Give Access</button>
                     </form>
                 </div>
