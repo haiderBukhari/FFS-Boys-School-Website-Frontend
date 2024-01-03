@@ -8,9 +8,12 @@ import TextField from '@mui/material/TextField';
 import { SuccesToast, ErrorToast } from '../../components/ReactToast';
 import axios from "axios"
 import { useSelector } from 'react-redux';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 import { useNavigate } from 'react-router-dom';
 
 const UploadDialog = ({ open, setOpen, id, subject, Facultyclass, fetchAgain, setFetchAgain }) => {
+    const [loading, setLoading] = useState(false);
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [link, setLink] = useState('');
@@ -18,6 +21,7 @@ const UploadDialog = ({ open, setOpen, id, subject, Facultyclass, fetchAgain, se
     const [drive, setDrive] = useState(false);
     const Navigate = useNavigate();
     const facultyId = useSelector(state=>state.userData.id);
+    const facultyName = useSelector(state=>state.userData.name);
 
     if(facultyId !== id){
         Navigate('/error');
@@ -27,10 +31,12 @@ const UploadDialog = ({ open, setOpen, id, subject, Facultyclass, fetchAgain, se
             ErrorToast("Please Fill all the Fields")
         }
         else {
+            setLoading(true);
             axios.post(`${process.env.REACT_APP_BACKEND_PORT}/faculty`, {
                 facultyId: id,
                 subject: subject,
                 class: Facultyclass,
+                name: facultyName,
                 title: title,
                 link: link,
                 description: description,
@@ -42,10 +48,15 @@ const UploadDialog = ({ open, setOpen, id, subject, Facultyclass, fetchAgain, se
                     "Accept": "application/json"
                 }
             }).then((data)=>{
+                setLoading(false);
+                setTitle("");
+                setLink("");
+                setDescription("");
+                setIsDrive(false);
                 SuccesToast("Uploaded")
                 setFetchAgain(!fetchAgain);
             }).catch((err)=>{
-                console.log(err);
+                setLoading(false);
                 ErrorToast("Error");
             });
             setOpen(false);
@@ -60,7 +71,7 @@ const UploadDialog = ({ open, setOpen, id, subject, Facultyclass, fetchAgain, se
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
-                <DialogTitle id="alert-dialog-title">{"Class 1 (Urdu) Material Uplaod"}</DialogTitle>
+                <DialogTitle id="alert-dialog-title">{`Class ${Facultyclass} (${subject}) Material Uplaod`}</DialogTitle>
                 <DialogContent>
                     <div className='flex justify-center items-center'>
                         <select onChange={(e) => {
@@ -105,6 +116,13 @@ const UploadDialog = ({ open, setOpen, id, subject, Facultyclass, fetchAgain, se
                     <Button style={{ backgroundColor: '#1A76D1', color: '#fff', width: '100px', textAlign: 'center', margin: '3px 4px', padding: '4px 6px', borderRadius: "6px" }} onClick={handleAgree} autoFocus>Upload</Button>
                 </DialogActions>
             </Dialog>
+            {
+                loading && <div style={{ width: "100%", margin: "40px 0" }} className='flex justify-center items-center'>
+                    <Box sx={{ display: 'flex' }}>
+                        <CircularProgress style={{ fontSize: "20px" }} />
+                    </Box>
+                </div>
+            }
         </React.Fragment>
     );
 };

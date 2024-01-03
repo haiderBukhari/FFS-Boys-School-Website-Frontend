@@ -53,7 +53,9 @@ const Login = () => {
                 name: data.name,
                 email: data.email,
                 contactNumber: data.contactNumber,
-                assignedClasses: data.assignedClasses
+                assignedClasses: data.assignedClasses,
+                isPasswordChanged: data.isPasswordChanged, 
+                isUserInfoChanged: data.isUserInfoChanged,
             }
             dispatch(addUserData(Userdata));
             localStorage.setItem('Token', res.data.token);
@@ -63,7 +65,11 @@ const Login = () => {
                 Navigate('/admin/dashboard')
             }
             else{
-                Navigate('/faculty/dashboard')
+                if(!data.isUserInfoChanged || !data.isPasswordChanged){
+                    Navigate('/faculty/onboarding')
+                }else{
+                    Navigate('/faculty/dashboard')
+                }
             }
         }).catch(err => {
             setError({
@@ -114,7 +120,7 @@ const Login = () => {
                         </div>
                         <div className="toggle-panel toggle-right">
                             <h1 className='welcome-note'>Hello, Faculties! <span style={{ fontSize: "27px" }}>👋</span></h1>
-                            <p>Welcome Back, Login! To Upload Student Materials</p>
+                            <p>Welcome Back, Login! To Access Resources</p>
                             <button className="hidden" id="register">Sign Up</button>
                         </div>
                     </div>

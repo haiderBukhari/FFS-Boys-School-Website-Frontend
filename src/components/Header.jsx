@@ -73,12 +73,13 @@ const Header = () => {
                                             {
                                                 userData.id && <>
                                                     <li className={`${Location.pathname === '/' ? 'active' : ''}`}><a href="/">Home</a></li>
-                                                    <li className={`${Location.pathname === '/admin/dashboard' ? 'active' : ''}`}><Link to="/admin/dashboard">Dashboard</Link></li>
                                                     {
-                                                        checkAdmin() ? <li className={`${Location.pathname === '/register' ? 'active' : ''}`}><Link to="register">Register Faculty</Link></li> : <li className={`${Location.pathname === '/faculty/dashboard' ? 'active' : ''}`}><Link to="/faculty/dashboard">Faculty Dashboard</Link></li>
+                                                        checkAdmin() && <li className={`${Location.pathname === '/admin/dashboard' ? 'active' : ''}`}><Link to="/admin/dashboard">Dashboard</Link></li>
+                                                    }
+                                                    {
+                                                        checkAdmin() ? <li className={`${Location.pathname === '/register' ? 'active' : ''}`}><Link to="register">Register Faculty</Link></li> : !userData.isPasswordChanged || !userData.isUserInfoChanged ?  <li className={`${Location.pathname === '/faculty/onboarding' ? 'active' : ''}`}><Link to="/faculty/onboarding">Faculty OnBoarding</Link></li>: <li className={`${Location.pathname === '/faculty/dashboard' ? 'active' : ''}`}><Link to="/faculty/dashboard">Faculty Dashboard</Link></li>
                                                     }
                                                     <li className={`${Location.pathname === '/feedback' ? 'active' : ''}`}><Link to="/feedback">FeedBack</Link></li>
-                                                    <li className={`${Location.pathname === '/contact' ? 'active' : ''}`}><Link to="/contact">Contact Us</Link></li>
                                                 </>
                                             }
                                         </ul>
@@ -86,9 +87,11 @@ const Header = () => {
                                 </div>
                             </div>
                             <div className="col-lg-2 col-12 quote-style">
-                                <div className="get-quote">
-                                    <Link to="/write-to-principal" className="btn">Write to Principal</Link>
-                                </div>
+                                {
+                                    !userData.id && <div className="get-quote">
+                                        <Link to="/write-to-principal" className="btn">Write to Principal</Link>
+                                    </div>
+                                }
                             </div>
                         </div>
 

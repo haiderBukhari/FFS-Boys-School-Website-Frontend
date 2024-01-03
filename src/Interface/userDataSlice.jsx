@@ -8,7 +8,9 @@ const initialState = storedData || {
     name: "",
     email: "",
     contactNumber: "",
-    assignedClasses: []
+    assignedClasses: [],
+    isPasswordChanged: false,
+    isUserInfoChanged: false
 };
 
 const userDataSlice = createSlice({
@@ -24,6 +26,8 @@ const userDataSlice = createSlice({
                 email: action.payload.email,
                 contactNumber: action.payload.contactNumber,
                 assignedClasses: action.payload.assignedClasses,
+                isPasswordChanged: action.payload.isPasswordChanged,
+                isUserInfoChanged: action.payload.isUserInfoChanged
             };
         },
         removeUserData: (state, action) => {
@@ -35,6 +39,8 @@ const userDataSlice = createSlice({
                 email: "",
                 contactNumber: "",
                 assignedClasses: [],
+                isPasswordChanged: false,
+                isUserInfoChanged: false
             }
         }
     }

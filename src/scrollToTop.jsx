@@ -1,9 +1,20 @@
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
 
 export const ScrollToTop = () => {
-    const Location = useLocation();
+    let current_location = useLocation();
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [Location.pathname])
-} 
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }, [current_location])
+    return null;
+}
+
+export const MoveToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}

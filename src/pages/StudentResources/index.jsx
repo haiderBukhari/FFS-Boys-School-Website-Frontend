@@ -5,6 +5,7 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import axios from 'axios';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useNavigate } from 'react-router-dom';
+import { MoveToTop } from '../../scrollToTop';
 
 const StudentResources = () => {
     const Navigate = useNavigate();
@@ -32,6 +33,7 @@ const StudentResources = () => {
                 className={Item === selectedClass ? 'selected' : ''}
                 onClick={() => {
                     handleRowClick(Item);
+                    MoveToTop();
                 }}
                 style={{ cursor: 'pointer' }}
             >
@@ -51,6 +53,7 @@ const StudentResources = () => {
                 onClick={() => {
                     handleRowClick1(Item);
                     getFacultyList(Item)
+                    MoveToTop();
                 }}
                 style={{ cursor: 'pointer' }}
             >
@@ -61,14 +64,13 @@ const StudentResources = () => {
             </tr>
         ));
     };
-
     const renderFacultyData = () => {
         return allFaculties?.map((Item, index) => (
             <tr
                 key={index}
                 className={Item === setSelectedFaculty ? 'selected' : ''}
                 onClick={() => {
-                    Navigate(`/faculty/resources/${selectedClass}/${selectedSubject}/${Item.name}/${Item._id}`)
+                    Navigate(`/students/resources/${selectedClass}/${selectedSubject}/${Item._id}`)
                 }}
                 style={{ cursor: 'pointer' }}
             >
