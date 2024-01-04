@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useDebugValue, useState } from 'react';
 import './Login.css'
 import axios from "axios"
 import { SuccesToast, ErrorToast } from './../ReactToast';
@@ -24,7 +24,11 @@ const Register = () => {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
-        }).then(res=>{SuccesToast("Accessed Given Successfully"); setUserData(temp)}).catch(err=>ErrorToast("Error in Giving Access"));
+        }).then(res=>{
+            SuccesToast("Accessed Given Successfully");
+            const clearData = {...temp, title: userData.title};
+            setUserData(clearData);
+    }).catch(err=>ErrorToast("Error in Giving Access"));
     }
     
     return (
