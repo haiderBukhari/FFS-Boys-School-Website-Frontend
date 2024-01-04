@@ -42,7 +42,6 @@ const FacultyMaterialComponents = ({ id, subject, Facultyclass, fetchAgain, setF
                 "Accept": "application/json"
             }
         }).then(res => {
-            console.log(res.data.FacultyData)
             setPdfLinks(res.data.FacultyData.link)
             setLoading(false);
             setError({

@@ -30,7 +30,6 @@ export function DeleteAlertDialog({ open, setOpen, selectedData, facultyId, subj
             SuccesToast("Successfully Deleted")
             setFetchAgain(!fetchAgain)
         }).catch(err => {
-            console.log(err)
             ErrorToast(err.response.data.message);
         });
         setLoading(false)

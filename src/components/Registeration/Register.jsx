@@ -18,7 +18,6 @@ const Register = () => {
             return ErrorToast("Please Fill All Fields")
         }
         const FinalData = {...userData};
-        console.log(FinalData);
         axios.post(`${process.env.REACT_APP_BACKEND_PORT}/register`, FinalData, {
             headers: {
                 'Content-Type': 'application/json',

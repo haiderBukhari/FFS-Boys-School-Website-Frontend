@@ -70,7 +70,6 @@ const ClassModel = ({ open, setOpen }) => {
             return { class: Items.class, subjects: Items.subjects }
         })
         const FinalData = { ...userDataChange, assignedClasses: assignedClassesIdRemoved };
-        console.log(FinalData);
         setLoading(true);
         axios.patch(`${process.env.REACT_APP_BACKEND_PORT}/register`, {
             id: userData.id,
