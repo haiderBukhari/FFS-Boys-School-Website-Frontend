@@ -9,7 +9,7 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import FeedIcon from '@mui/icons-material/Feed';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import ChatIcon from '@mui/icons-material/Chat';
-
+import PrincipalMessage from "../../components/principalMessage";
 
 const HomePage = () => {
     const FeaturesArr = [
@@ -48,6 +48,7 @@ const HomePage = () => {
     return (
         <>
             <DynamicCarousel />
+            <PrincipalMessage/>
             <HomeAbout />
             <div className="features">
                 <div className="flex justify-center">
