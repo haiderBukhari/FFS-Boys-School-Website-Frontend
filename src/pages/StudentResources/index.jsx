@@ -5,6 +5,8 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import axios from 'axios';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useNavigate } from 'react-router-dom';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 import { MoveToTop } from '../../scrollToTop';
 
 const StudentResources = () => {
@@ -12,6 +14,7 @@ const StudentResources = () => {
     const classList = classListData.classList;
     const [selectedClass, setSelectedClass] = useState(null);
     const [selectedSubject, setSelectedSubject] = useState(null);
+    const [loading, setLoading] = useState(false);
     const [selectedFaculty, setSelectedFaculty] = useState(null); //eslint-disable-line
     const [allFaculties, setAllFaculties] = useState(null);
     const handleRowClick = (className) => {
@@ -21,8 +24,10 @@ const StudentResources = () => {
         setSelectedSubject(subjectName === selectedSubject ? null : subjectName);
     };
     const getFacultyList = (Item) => {
+        setLoading(true);
         axios.get(`${process.env.REACT_APP_BACKEND_PORT}/getFaculty?class=${selectedClass}&subject=${Item}`).then((res)=>{
             setAllFaculties(res.data.data);
+            setLoading(false);
         }).catch((err)=>{
         })
     }
@@ -84,6 +89,13 @@ const StudentResources = () => {
 
     return (
         <div>
+            {
+                loading && <div style={{ width: "100%", margin: "40px 0", position: "absolute", zIndex: 3 }} className='flex justify-center items-center'>
+                    <Box sx={{ display: 'flex' }}>
+                        <CircularProgress style={{ fontSize: "20px" }} />
+                    </Box>
+                </div>
+            }
             {
                 !selectedClass && <>
                     <p style={{ fontSize: "17px", textAlign: "center", marginTop: "20px" }}>Select Your Class To access relevant resources</p>
