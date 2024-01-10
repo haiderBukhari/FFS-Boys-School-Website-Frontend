@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
+import UpdateIcon from '@mui/icons-material/Update';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
@@ -7,6 +8,7 @@ import { ErrorToast } from '../../components/ReactToast';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import { addUserData } from '../../Interface/userDataSlice';
+import UploadClassesDialog from './updateClassesDialog';
 
 export const FacultyResources = () => {
     const FacultyId = useSelector(state => state.userData.id);
@@ -14,6 +16,7 @@ export const FacultyResources = () => {
     const [userData, setUserData] = useState(null);
     const dispatch = useDispatch();
     const Navigate = useNavigate();
+    const [updateClasses, setUpdateClasses] = useState(false);
     const fetchFacultyData = async () => {
         setLoading(true);
         axios.get(`${process.env.REACT_APP_BACKEND_PORT}/register/${FacultyId}`, {
@@ -41,6 +44,9 @@ export const FacultyResources = () => {
         <div>
             {
                 userData && (<div style={{ margin: "0 15px" }}>
+                    <div className='flex justify-center item-center'>
+                        <button onClick={()=>{setUpdateClasses(!updateClasses)}} style={{ padding: "8px 20px", backgroundColor: 'rgba(255, 0, 0, 0.7)', color: "#fff", borderRadius: "6px", margin: "20px 0 10px 0 " }}>Update Assigned Classes <UpdateIcon style={{ color: "#fff", paddingLeft: "5px", fontSize: "30px" }} /> </button>
+                    </div>
                     <h1 style={{ textAlign: 'center', fontSize: "20px", margin: "20px", fontFamily: "sans-serif" }}>Hello <span style={{ fontSize: "30px", paddingRight: "10px" }}>👋</span> {userData?.title} {userData.name} </h1>
                     <p style={{ textAlign: "center", fontSize: "16px", marginTop: "20px" }}>Respected Faculties! You can manage students materials, records and homework here!</p>
                     <div className='flex justify-center items-center flex-wrap'>
@@ -67,6 +73,7 @@ export const FacultyResources = () => {
                     </Box>
                 </div>
             }
+            <UploadClassesDialog open={updateClasses} setOpen={setUpdateClasses} setFacultyData={setUserData}/>
         </div>
     )
 }
