@@ -29,7 +29,7 @@ const Header = () => {
                         <div className="flex justify-between items-center flex-wrap" style={{ width: "100%", padding: "0 0 0 20px" }}>
                             <ul className="top-contact" style={{ float: "none" }}>
                                 <li><i className="fa fa-phone"></i>(051) 4937002</li>
-                                <li><i className="fa fa-envelope"></i><Link href="mailto:vp@ffsboyswah@gmail.com">vp@ffsboyswah@gmail.com</Link></li>
+                                <li><i className="fa fa-envelope"></i><Link to="mailto:vp@ffsboyswah@gmail.com">vp@ffsboyswah@gmail.com</Link></li>
                             </ul>
                             {
                                 userData.id && <div style={{ border: '1px solid #ccc', width: "36px", padding: "5px", borderRadius: "50%" }} className="flex justify-start items-end mx-4">
@@ -69,12 +69,12 @@ const Header = () => {
                                                 userData.id && <>
                                                     <li className={`${Location.pathname === '/' ? 'active' : ''}`}><a href="/">Home</a></li>
                                                     {
-                                                        checkAdmin() && <li className={`${Location.pathname === '/admin/dashboard' ? 'active' : ''}`}><Link href="/admin/dashboard">Dashboard</Link></li>
+                                                        checkAdmin() && <li className={`${Location.pathname === '/admin/dashboard' ? 'active' : ''}`}><Link to="/admin/dashboard">Dashboard</Link></li>
                                                     }
                                                     {
-                                                        checkAdmin() ? <li className={`${Location.pathname === '/register' ? 'active' : ''}`}><Link href="register">Register Faculty</Link></li> : !userData.isPasswordChanged || !userData.isUserInfoChanged ?  <li className={`${Location.pathname === '/faculty/onboarding' ? 'active' : ''}`}><Link href="/faculty/onboarding">Faculty OnBoarding</Link></li>: <li className={`${Location.pathname === '/faculty/dashboard' ? 'active' : ''}`}><Link href="/faculty/dashboard">Faculty Dashboard</Link></li>
+                                                        checkAdmin() ? <li className={`${Location.pathname === '/register' ? 'active' : ''}`}><Link to="register">Register Faculty</Link></li> : !userData.isPasswordChanged || !userData.isUserInfoChanged ?  <li className={`${Location.pathname === '/faculty/onboarding' ? 'active' : ''}`}><Link to="/faculty/onboarding">Faculty OnBoarding</Link></li>: <li className={`${Location.pathname === '/faculty/dashboard' ? 'active' : ''}`}><Link to="/faculty/dashboard">Faculty Dashboard</Link></li>
                                                     }
-                                                    <li className={`${Location.pathname === '/feedback' ? 'active' : ''}`}><Link href="/feedback">FeedBack</Link></li>
+                                                    <li className={`${Location.pathname === '/feedback' ? 'active' : ''}`}><Link to="/feedback">FeedBack</Link></li>
                                                 </>
                                             }
                                         </ul>
@@ -84,7 +84,7 @@ const Header = () => {
                             <div className="col-lg-2 col-12 quote-style">
                                 {
                                     !userData.id && <div className="get-quote">
-                                        <Link href="/write-to-principal" className="btn">Write to Principal</Link>
+                                        <Link to="/write-to-principal" className="btn">Write to Principal</Link>
                                     </div>
                                 }
                             </div>

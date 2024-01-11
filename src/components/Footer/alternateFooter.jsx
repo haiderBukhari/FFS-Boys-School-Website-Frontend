@@ -32,7 +32,7 @@ const Footer = () => {
                             <a className="btn btn-link bg-transparent" href="/">Worthy Visits</a>
                             <a className="btn btn-link bg-transparent" href="/">Events</a>
                             <a className="btn btn-link bg-transparent" href="/login">Login</a>
-                            <a className="btn btn-link bg-transparent" href="/">Write to Principal</a>
+                            <a className="btn btn-link bg-transparent" href="/write-to-principal">Write to Principal</a>
                         </div>
                         <div className="col-md-6 col-lg-3">
                             <h4 className="text-white mb-4" style={{fontFamily: "poppins", fontSize: "19px", fontWeight: "600"}}>Newsletter</h4>
