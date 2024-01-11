@@ -72,7 +72,7 @@ Version:	1.1
 		$('.menu').slicknav({
 			prependTo: ".mobile-nav",
 			duration: 300,
-			closeOnClick: true,
+			// closeOnClick: true,
 		});
 
 		/*===============================

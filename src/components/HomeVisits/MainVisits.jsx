@@ -42,7 +42,7 @@ export const MainVisits = React.memo(() => {
     ]
     return (
         <>
-            <section className="pt-5 pb-2 fadeInUp" data-wow-delay="0.2s">
+            <section id="events" className="pt-5 pb-2 fadeInUp" data-wow-delay="0.2s">
                 <div className="flex justify-center pt-4">
                     <div style={{ border: '1px solid #ccc', padding: '6px 0', width: '120px', textAlign: 'center', borderRadius: '50rem', fontSize: '17px' }} className="box">Visits</div>
                 </div>
