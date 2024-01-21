@@ -49,7 +49,7 @@ const Header = () => {
                                     <a href="/"><img style={{ width: '100px' }} src={Logo} alt="#" /></a>
                                 </div>
                                 {/* <div> */}
-                                    <div className="mobile-nav mt-10"></div>
+                                <div className="mobile-nav mt-10"></div>
                                 {/* </div> */}
                             </div>
                             <div className="col-lg-7" style={{ width: 'auto' }}>
@@ -62,6 +62,12 @@ const Header = () => {
                                                     <li className={`${Location.pathname === '/students/resources' ? 'active' : ''}`}><Link to="/students/resources">Students Resources</Link></li>
                                                     {/* <li className={`${Location.pathname === '/newsevents' ? 'active' : ''}`}><Link to="/">News & Events</Link></li> */}
                                                     <li className={`${Location.pathname === '/login' ? 'active' : ''}`}><Link to="/login">Login</Link></li>
+                                                    <li><Link to="/courses/web-development">Courses<i className="icofont-rounded-down"></i></Link>
+                                                        <ul className="dropdown">
+                                                            <li><Link to="/courses/web-development">Web Development Course</Link></li>
+                                                        </ul>
+                                                    </li>
+
                                                     <li className={`${Location.pathname === '/contact' ? 'active' : ''}`}><Link to="/contact">Contact Us</Link></li>
                                                 </>
                                             }
@@ -72,8 +78,11 @@ const Header = () => {
                                                         checkAdmin() && <li className={`${Location.pathname === '/admin/dashboard' ? 'active' : ''}`}><Link to="/admin/dashboard">Dashboard</Link></li>
                                                     }
                                                     {
-                                                        checkAdmin() ? <li className={`${Location.pathname === '/register' ? 'active' : ''}`}><Link to="register">Register Faculty</Link></li> : !userData.isPasswordChanged || !userData.isUserInfoChanged ?  <li className={`${Location.pathname === '/faculty/onboarding' ? 'active' : ''}`}><Link to="/faculty/onboarding">Faculty OnBoarding</Link></li>: <li className={`${Location.pathname === '/faculty/dashboard' ? 'active' : ''}`}><Link to="/faculty/dashboard">Faculty Dashboard</Link></li>
+                                                        checkAdmin() ? <li className={`${Location.pathname === '/register' ? 'active' : ''}`}><Link to="register">Register Faculty</Link></li> : !userData.isPasswordChanged || !userData.isUserInfoChanged ? <li className={`${Location.pathname === '/faculty/onboarding' ? 'active' : ''}`}><Link to="/faculty/onboarding">Faculty OnBoarding</Link></li> : <li className={`${Location.pathname === '/faculty/dashboard' ? 'active' : ''}`}><Link to="/faculty/dashboard">Faculty Dashboard</Link></li>
                                                     }
+                                                    <ul className="dropdown">
+                                                        <li><Link to="/course/web-development">Web Development Course</Link></li>
+                                                    </ul>
                                                     <li className={`${Location.pathname === '/feedback' ? 'active' : ''}`}><Link to="/feedback">FeedBack</Link></li>
                                                 </>
                                             }
