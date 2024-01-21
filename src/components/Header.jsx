@@ -80,9 +80,11 @@ const Header = () => {
                                                     {
                                                         checkAdmin() ? <li className={`${Location.pathname === '/register' ? 'active' : ''}`}><Link to="register">Register Faculty</Link></li> : !userData.isPasswordChanged || !userData.isUserInfoChanged ? <li className={`${Location.pathname === '/faculty/onboarding' ? 'active' : ''}`}><Link to="/faculty/onboarding">Faculty OnBoarding</Link></li> : <li className={`${Location.pathname === '/faculty/dashboard' ? 'active' : ''}`}><Link to="/faculty/dashboard">Faculty Dashboard</Link></li>
                                                     }
-                                                    <ul className="dropdown">
-                                                        <li><Link to="/course/web-development">Web Development Course</Link></li>
-                                                    </ul>
+                                                    <li><Link to="/courses/web-development">Courses<i className="icofont-rounded-down"></i></Link>
+                                                        <ul className="dropdown">
+                                                            <li><Link to="/courses/web-development">Web Development Course</Link></li>
+                                                        </ul>
+                                                    </li>
                                                     <li className={`${Location.pathname === '/feedback' ? 'active' : ''}`}><Link to="/feedback">FeedBack</Link></li>
                                                 </>
                                             }
