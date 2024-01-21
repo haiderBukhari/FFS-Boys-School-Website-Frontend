@@ -15,6 +15,7 @@ import FacultyMaterial from "../pages/FacultyMaterials/material"
 import FacultyUploadMaterial from "../pages/FacultyResource/uploadResources"
 import { useSelector } from 'react-redux';
 import NewFaculty from "../pages/FacultyOnboarding/newFaculty"
+import Blogs from "../pages/Blogs"
 
 const Routers = () => {
     const userData = useSelector(state=>state.userData);
@@ -27,6 +28,7 @@ const Routers = () => {
                 <Route path="/write-to-principal" element={<WriteToPrincipal />} />
                 <Route path="/contact-responses" element={userData.id && userData.email==="admin@gmail.com" ? <ContactResponses /> : <Navigate to="/login" />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/courses/web-development" element={<Blogs />} />
                 <Route path="/register" element={userData.id ? userData.email==="admin@gmail.com" ? <Register /> : <Navigate to="/faculty/dashboard" /> : <Navigate to="/login" />} />
                 <Route path="/admin/dashboard" element={userData.id ? userData.email==="admin@gmail.com" ? <RegisteredFaculty /> : <Navigate to="/faculty/dashboard" /> : <Navigate to="/login" />} />
                 <Route path="/faculty/dashboard" element={userData.id ? <FacultyResources /> : <Navigate to="/login" />} />

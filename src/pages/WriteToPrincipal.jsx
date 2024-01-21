@@ -16,14 +16,14 @@ export const WriteToPrincipal = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         axios.post(`${process.env.REACT_APP_BACKEND_PORT}/principal`, userInfo, {
-            headers: { 
+            headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
-        }).then(res=>{
+        }).then(res => {
             SuccesToast('Message Sent')
             setUserInfo(tempUserData)
-        }).catch(err=>{
+        }).catch(err => {
             ErrorToast('Error in sending the message')
         })
     }
@@ -61,16 +61,16 @@ export const WriteToPrincipal = () => {
                                     <h1 style={{ fontWeight: 'bold', fontSize: '23px', lineHeight: '2.3rem', paddingLeft: '3px', marginBottom: '50px', textAlign: 'center' }}>Fill the Details</h1>
                                     <div className="row g-3">
                                         <div className="col-12 col-sm-6">
-                                            <input onChange={(e)=>{setUserInfo({...userInfo, name: e.target.value})}} type="text" className="form-control border-0" placeholder="Your Name (Optional)" style={{ height: "55px", marginBottom: '20px', padding: '10px' }} />
-                                        </div> 
-                                        <div className="col-12 col-sm-6">
-                                            <input onChange={(e)=>{setUserInfo({...userInfo, email: e.target.value})}} type="email" className="form-control border-0" placeholder="Your Email (Optional)" style={{ height: "55px", marginBottom: '20px', padding: '10px' }} value={userInfo.email}/>
+                                            <input onChange={(e) => { setUserInfo({ ...userInfo, name: e.target.value }) }} type="text" className="form-control border-0" placeholder="Your Name (Optional)" style={{ height: "55px", marginBottom: '20px', padding: '10px' }} />
                                         </div>
                                         <div className="col-12 col-sm-6">
-                                            <input onChange={(e)=>{setUserInfo({...userInfo, mobile: e.target.value})}} type="text" className="form-control border-0" placeholder="Your Mobile (Optional)" style={{ height: "55px", marginBottom: '20px', padding: '10px' }} value={userInfo.mobile}/>
+                                            <input onChange={(e) => { setUserInfo({ ...userInfo, email: e.target.value }) }} type="email" className="form-control border-0" placeholder="Your Email (Optional)" style={{ height: "55px", marginBottom: '20px', padding: '10px' }} value={userInfo.email} />
+                                        </div>
+                                        <div className="col-12 col-sm-6">
+                                            <input onChange={(e) => { setUserInfo({ ...userInfo, mobile: e.target.value }) }} type="text" className="form-control border-0" placeholder="Your Mobile (Optional)" style={{ height: "55px", marginBottom: '20px', padding: '10px' }} value={userInfo.mobile} />
                                         </div>
                                         <div className="col-12 col-sm-6 flex items-center justify-center">
-                                            <select onChange={(e)=>{setUserInfo({...userInfo, className: e.target.value})}} className="form-select border-0 flex items-center justify-center" style={{ height: "55px", marginBottom: '20px', width: '400px', padding: '10px' }}>
+                                            <select onChange={(e) => { setUserInfo({ ...userInfo, className: e.target.value }) }} className="form-select border-0 flex items-center justify-center" style={{ height: "55px", marginBottom: '20px', width: '400px', padding: '10px' }}>
                                                 <option selected>Select Class</option>
                                                 {
                                                     Object.keys(classData).map((item, index) => (
@@ -80,7 +80,7 @@ export const WriteToPrincipal = () => {
                                             </select>
                                         </div>
                                         <div className="col-12">
-                                            <textarea onChange={(e)=>{setUserInfo({...userInfo, message: e.target.value})}} style={{ padding: '10px' }} value={userInfo.message} className="form-control border-0" rows="5" placeholder="Describe your problem (Required)"></textarea>
+                                            <textarea onChange={(e) => { setUserInfo({ ...userInfo, message: e.target.value }) }} style={{ padding: '10px' }} value={userInfo.message} className="form-control border-0" rows="5" placeholder="Describe your problem (Required)"></textarea>
                                         </div>
                                         <div className="get-quote m-auto" >
                                             <button onClick={onSubmit} style={{ marginTop: '40px' }} className="btn">Send Message</button>

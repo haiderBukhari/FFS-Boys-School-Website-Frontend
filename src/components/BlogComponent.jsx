@@ -1,164 +1,121 @@
-// import Blog1 from "../assets/img/activity1.jpg"
-// import Blog2 from "../assets/img/activity1.jpg"
-// import Blog3 from "../assets/img/activity1.jpg"
-// const BlogComponent = () => {
-//     return (
-//         <>
-//             <div className="breadcrumbs overlay">
-//                 <div className="container">
-//                     <div className="bread-inner">
-//                         <div className="row">
-//                             <div className="col-12">
-//                                 <h2>Blog Single</h2>
-//                                 <ul className="bread-list">
-//                                     <li><a href="index.html">Home</a></li>
-//                                     <li><i className="icofont-simple-right"></i></li>
-//                                     <li className="active">Blog Single</li>
-//                                 </ul>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
+import Blog1 from "../assets/courses/web_dev_heading.webp"
 
-//             <section className="news-single section">
-//                 <div className="container">
-//                     <div className="row">
-//                         <div className="col-lg-8 col-12">
-//                             <div className="row">
-//                                 <div className="col-12">
-//                                     <div className="single-main">
-//                                         <div className="news-head">
-//                                             <img src={Blog1} alt="#" />
-//                                         </div>
-//                                         <h1 className="news-title"><a href="news-single.html">More than 80 clinical trials launch to test of the coronavirus .</a></h1>
-//                                         <div className="meta">
-//                                             <div className="meta-left">
-//                                                 <span className="author"><a href="/"><img src="../assets/img/author1.jpg" alt="#" />Naimur Rahman</a></span>
-//                                                 <span className="date"><i className="fa fa-clock-o"></i>03 Feb 2019</span>
-//                                             </div>
-//                                             <div className="meta-right">
-//                                                 <span className="comments"><a href="/"><i className="fa fa-comments"></i>05 Comments</a></span>
-//                                                 <span className="views"><i className="fa fa-eye"></i>33K Views</span>
-//                                             </div>
-//                                         </div>
-//                                         <div className="news-text">
-//                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis ultricies tortor, nec sollicitudin lorem sagittis vitae. Curabitur rhoncus commodo rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec lacus pulvinar, laoreet dolor quis, pellentesque ante. Cras nulla orci, pharetra at dictum consequat, pretium pretium nulla. Suspendisse porttitor nunc a sodales tempor. Mauris sed felis maximus, interdum metus vel, tincidunt diam.</p>
-//                                             <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec lacus pulvinar, laoreet dolor quis, pellentesque ante. Cras nulla orci, pharetra at dictum consequat, pretium pretium nulla. Suspendisse porttitor nunc a sodales tempor. Mauris sed felis maximus, interdum metus vel, tincidunt diam. Nam ac risus vitae sem vehicula egestas. Sed velit nulla, viverra non commod</p>
-//                                             <div className="image-gallery">
-//                                                 <div className="row">
-//                                                     <div className="col-lg-6 col-md-6 col-12">
-//                                                         <div className="single-image">
-//                                                             <img src={Blog2} alt="#" />
-//                                                         </div>
-//                                                     </div>
-//                                                     <div className="col-lg-6 col-md-6 col-12">
-//                                                         <div className="single-image">
-//                                                             <img src={Blog3} alt="#" />
-//                                                         </div>
-//                                                     </div>
-//                                                 </div>
-//                                             </div>
-//                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis ultricies tortor, nec sollicitudin lorem sagittis vitae. Curabitur rhoncus commodo rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec lacus pulvinar, laoreet dolor quis, pellentesque ante. Cras nulla orci, pharetra at dictum consequat, pretium pretium nulla. Suspendisse porttitor nunc a sodales tempor. Mauris sed felis maximus, interdum metus vel, tincidunt diam.</p>
-//                                             <blockquote className="overlay">
-//                                                 <p>Aliquam nec lacus pulvinar, laoreet dolor quis, pellentesque ante. Cras nulla orci, pharetra at dictum consequat, pretium pretium nulla. Suspendisse porttitor nunc a sodales tempor. Mauris sed felis maximus, interdum metus vel, tincidunt diam. Nam ac risus vitae sem vehicula egestas. Sed velit nulla, viverra non commodo et, sodales</p>
-//                                             </blockquote>
-//                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis ultricies tortor, nec sollicitudin lorem sagittis vitae. Curabitur rhoncus commodo rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec lacus pulvinar, laoreet dolor quis, pellentesque ante. Cras nulla orci, pharetra at dictum consequat, pretium pretium nulla. Suspendisse porttitor nunc a sodales tempor. Mauris sed felis maximus, interdum metus vel, tincidunt diam. Nam ac risus vitae sem vehicula egestas. Sed velit nulla, viverra non commodo et, sodales id dui.</p>
-//                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis ultricies tortor, nec sollicitudin lorem sagittis vitae. Curabitur rhoncus commodo rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec lacus pulvinar, laoreet dolor quis, pellentesque ante. Cras nulla orci, pharetra at dictum consequat, pretium pretium nulla. Suspendisse</p>
-//                                         </div>
-//                                         <div className="blog-bottom">
-//                                             <ul className="social-share">
-//                                                 <li className="facebook"><a href="/"><i className="fa fa-facebook"></i><span>Facebook</span></a></li>
-//                                                 <li className="twitter"><a href="/"><i className="fa fa-twitter"></i><span>Twitter</span></a></li>
-//                                                 <li className="google-plus"><a href="/"><i className="fa fa-google-plus"></i></a></li>
-//                                                 <li className="linkedin"><a href="/"><i className="fa fa-linkedin"></i></a></li>
-//                                                 <li className="pinterest"><a href="/"><i className="fa fa-pinterest"></i></a></li>
-//                                             </ul>
-//                                             <ul className="prev-next">
-//                                                 <li className="prev"><a href="/"><i className="fa fa-angle-double-left"></i></a></li>
-//                                                 <li className="next"><a href="/"><i className="fa fa-angle-double-right"></i></a></li>
-//                                             </ul>
-//                                         </div>
-//                                     </div>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                         <div className="col-lg-4 col-12">
-//                             <div className="main-sidebar">
-//                                 <div className="single-widget search">
-//                                     <div className="form">
-//                                         <input type="email" placeholder="Search Here..." />
-//                                         <a className="button" href="/"><i className="fa fa-search"></i></a>
-//                                     </div>
-//                                 </div>
-//                                 <div className="single-widget category">
-//                                     <h3 className="title">Blog Categories</h3>
-//                                     <ul className="categor-list">
-//                                         <li><a href="/">Mens Apparel</a></li>
-//                                         <li><a href="/">Womens Apparel</a></li>
-//                                         <li><a href="/">Bags Collection</a></li>
-//                                         <li><a href="/">Accessories</a></li>
-//                                         <li><a href="/">Sun Glasses</a></li>
-//                                     </ul>
-//                                 </div>
-//                                 <div className="single-widget recent-post">
-//                                     <h3 className="title">Recent post</h3>
-//                                     <div className="single-post">
-//                                         <div className="image">
-//                                             <img src="../assets/img/blog-sidebar1.jpg" alt="#" />
-//                                         </div>
-//                                         <div className="content">
-//                                             <h5><a href="/">We have annnocuced our new product.</a></h5>
-//                                             <ul className="comment">
-//                                                 <li><i className="fa fa-calendar" aria-hidden="true"></i>Jan 11, 2020</li>
-//                                                 <li><i className="fa fa-commenting-o" aria-hidden="true"></i>35</li>
-//                                             </ul>
-//                                         </div>
-//                                     </div>
-//                                     <div className="single-post">
-//                                         <div className="image">
-//                                             <img src="../assets/img/blog-sidebar2.jpg" alt="#" />
-//                                         </div>
-//                                         <div className="content">
-//                                             <h5><a href="/">Top five way for solving teeth problems.</a></h5>
-//                                             <ul className="comment">
-//                                                 <li><i className="fa fa-calendar" aria-hidden="true"></i>Mar 05, 2019</li>
-//                                                 <li><i className="fa fa-commenting-o" aria-hidden="true"></i>59</li>
-//                                             </ul>
-//                                         </div>
-//                                     </div>
-//                                     <div className="single-post">
-//                                         <div className="image">
-//                                             <img src="../assets/img/blog-sidebar3.jpg" alt="#" />
-//                                         </div>
-//                                         <div className="content">
-//                                             <h5><a href="/">We provide highly business soliutions.</a></h5>
-//                                             <ul className="comment">
-//                                                 <li><i className="fa fa-calendar" aria-hidden="true"></i>June 09, 2019</li>
-//                                                 <li><i className="fa fa-commenting-o" aria-hidden="true"></i>44</li>
-//                                             </ul>
-//                                         </div>
-//                                     </div>
-//                                 </div>
-//                                 <div className="single-widget side-tags">
-//                                     <h3 className="title">Tags</h3>
-//                                     <ul className="tag">
-//                                         <li><a href="/">business</a></li>
-//                                         <li><a href="/">wordpress</a></li>
-//                                         <li><a href="/">html</a></li>
-//                                         <li><a href="/">multipurpose</a></li>
-//                                         <li><a href="/">education</a></li>
-//                                         <li><a href="/">template</a></li>
-//                                         <li><a href="/">Ecommerce</a></li>
-//                                     </ul>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </section>
-//         </>
-//     )
-// }
+const BlogComponent = () => {
+    const WebDevelopmentUrl = [
+        {
+            name: "Getting Started with the Basics of HTML",
+            url: "https://bit.ly/48Yo8tN"
+        },
+        {
+            name: "Learning and Mastering CSS",
+            url: "https://bit.ly/3SBcgJ3"
+        },
+        {
+            name: "Mastring Javascript",
+            url: "https://bit.ly/3SqUZlD"
+        },
+        {
+            name: "Learning about Website Animations",
+            url: "https://bit.ly/3Ockww6"
+        }
+    ]
+    return (
+        <>
+            <div style={{backgroundColor: '#1a76d1'}} className={`breadcrumbs color-blue`}>
+                <div className="container">
+                    <div className="bread-inner">
+                        <div className="row">
+                            <div className="col-12">
+                                <h2>Web Development Course</h2>
+                                <ul className="bread-list">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><i className="icofont-simple-right"></i></li>
+                                    <li className="active">courses</li>
+                                    <li><i className="icofont-simple-right"></i></li>
+                                    <li className="active">web development</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-// export default BlogComponent
+            <section className="news-single section">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-8 col-12">
+                            <div className="row">
+                                <div className="col-12">
+                                    <div className="single-main">
+                                        <div className="news-head" style={{width: "100%"}}>
+                                            <img src={Blog1} alt="#" />
+                                        </div>
+                                        <h1 className="news-title"><a href="news-single.html">The complete Full Stack Website development Course and Roadmap in 2024 in URDU.</a></h1>
+                                        <div className="meta">
+                                            <div className="meta-left flex justify-center items-center">
+                                                <span className="author">Haider Bukhari</span>
+                                            </div>
+                                            <div className="meta-right">
+                                                <span className="date"><i className="fa fa-clock-o"></i>20 Jan 2024</span>
+                                            </div>
+                                        </div>
+                                        <div className="news-text">
+                                            <p>Learning Web Development no matter is a biggest challenge because in the way to learn the development you non doubt face multiple challenges. <strong> Disclaimer!!! You can start this course on Mobile!! after this when you think the need of computer is necessary go for it.</strong> Try to learn every day no matter it is weekends just 20 minutes with consistent efforts and dedication can change the direction of this undirected arrow. </p>
+                                            <p>Note. There are bigger fish in this world of technology donot ever compare your self with other and never happend to have some sort of demotivation. every successfull man in this world start from knowing nothing. And no matter you are the amongst them. So welcome to the party.😊</p>
+                                            <div className="image-gallery">
+                                                <h1 className="news-title font-serif font-bold mt-6">WEBSITE DEVELOPMENT ROADMAP</h1>
+                                                <div className="row flex justify-center items-center">
+                                                            <img src="https://coder-coder.com/wp-content/uploads/2019/08/roadmap-development-infographic.jpg" alt="#" />
+                                                </div>
+                                            </div>
+                                            <p>So Get Started With Courses</p>
+                                            <div>
+                                            {
+                                                WebDevelopmentUrl.map((Items, index)=> (
+                                                    <div className="mt-4 flex flex-wrap">
+                                                        <p><span className="mr-1 font-bold">{index+1}.</span>{Items.name}</p>
+                                                        <a className="text-blue-600 ml-3" style={{color: "blue"}} href={Items.url} target="_blank" rel="noreferrer">{Items.url}</a>
+                                                    </div>
+                                                ))
+                                            }
+                                            <p className="mt-4">More Comming Soon...😊</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-12">
+                            <div className="main-sidebar">
+                                <div className="single-widget category">
+                                    <h3 className="title">Course Categories</h3>
+                                    <ul className="categor-list">
+                                        <li><a href="/">Web Development</a></li>
+                                        <li><a href="/">Graphic Designing (In Progress)</a></li>
+                                        <li><a href="/">Video Editing (In Progress)</a></li>
+                                        <li><a href="/">Social Media Marketing (In Progress)</a></li>
+                                        <li><a href="/">Getting Started with Freelancing</a></li>
+                                    </ul>
+                                </div>
+                                <div className="single-widget side-tags">
+                                    <h3 className="title">Tags</h3>
+                                    <ul className="tag">
+                                        <li><a href="/">Website Development</a></li>
+                                        <li><a href="/">HTML</a></li>
+                                        <li><a href="/">CSS</a></li>
+                                        <li><a href="/">JAVASCRIPT</a></li>
+                                        <li><a href="/">Dom Manipulation</a></li>
+                                        <li><a href="/">GASP</a></li>
+                                        <li><a href="/">Ecommerce</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </>
+    )
+}
+
+export default BlogComponent
