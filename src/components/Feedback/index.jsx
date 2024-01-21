@@ -45,11 +45,11 @@ const Feedback = () => {
                     <div className='feedbackbox'>
                         <div className='emoji'>
                             <div style={{ transform: `${tranform[0] ? 'translateX(0)' : tranform[1] ? 'translateX(-100px)' : tranform[2] ? 'translateX(-200px)' : tranform[3] ? 'translateX(-300px)' : "translateX(-400px)"}` }} id='emoji'>
-                                <img src={poor} alt="" />
-                                <img src={bad} alt="" />
-                                <img src={okay} alt="" />
-                                <img src={good} alt="" />
-                                <img src={excellent} alt="" />
+                                <img src={poor} alt="" loading="lazy"/>
+                                <img src={bad} alt="" loading="lazy"/>
+                                <img src={okay} alt="" loading="lazy"/>
+                                <img src={good} alt="" loading="lazy"/>
+                                <img src={excellent} alt="" loading="lazy"/>
                             </div>
                         </div>
                         <div className='rating'>

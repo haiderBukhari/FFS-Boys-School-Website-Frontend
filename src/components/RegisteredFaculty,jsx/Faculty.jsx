@@ -48,6 +48,7 @@ const RegisteredFaculty = () => {
                         style={{ border: 'none', borderRadius: '0px', width: 'auto', height: '20px', cursor: 'pointer' }}
                         src={ShowMore}
                         alt="show more"
+                        loading="lazy"
                     />
                 </td>
             </tr>

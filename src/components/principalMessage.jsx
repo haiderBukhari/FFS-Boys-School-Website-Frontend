@@ -10,7 +10,7 @@ const PrincipalMessage = () => {
                         <img style={{
                             padding: "1px", maxWidth: "550px", minWidth: "200px", width: "100%", borderRadius:
                                 "50%"
-                        }} className="bg-light p-3 flex-1 hover:scale-105 hover:shadow-md" src={PrincipalPic} alt="" />
+                        }} className="bg-light p-3 flex-1 hover:scale-105 hover:shadow-md" src={PrincipalPic} alt="" loading="lazy"/>
                         <MessageIcon style={{ color: "blue", position: "absolute", right: "0", top:"30%" }} />
                     </div>
                 </div>

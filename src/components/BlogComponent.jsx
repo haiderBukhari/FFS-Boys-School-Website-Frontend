@@ -48,7 +48,7 @@ const BlogComponent = () => {
                                 <div className="col-12">
                                     <div className="single-main">
                                         <div className="news-head" style={{width: "100%"}}>
-                                            <img src={Blog1} alt="#" />
+                                            <img src={Blog1} alt="#" loading="lazy"/>
                                         </div>
                                         <h1 className="news-title"><a href="news-single.html">The complete Full Stack Website development Course and Roadmap in 2024 in URDU.</a></h1>
                                         <div className="meta">
@@ -65,7 +65,7 @@ const BlogComponent = () => {
                                             <div className="image-gallery">
                                                 <h1 className="news-title font-serif font-bold mt-6">WEBSITE DEVELOPMENT ROADMAP</h1>
                                                 <div className="row flex justify-center items-center">
-                                                            <img src="https://coder-coder.com/wp-content/uploads/2019/08/roadmap-development-infographic.jpg" alt="#" />
+                                                            <img src="https://coder-coder.com/wp-content/uploads/2019/08/roadmap-development-infographic.jpg" alt="#" loading="lazy"/>
                                                 </div>
                                             </div>
                                             <p>So Get Started With Courses</p>

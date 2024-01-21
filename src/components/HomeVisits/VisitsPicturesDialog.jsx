@@ -24,7 +24,7 @@ export const VisitsPicturesDialog = React.memo(({ dialog, setDialog, selected, s
                     <div className='max-w-lg' autoSlide={true} autoSlideInterval={3000}>
                         <SubImageCarousel>
                             {selected?.images.map((image, index) => (
-                                <img src={image} alt="" />
+                                <img src={image} alt="" loading="lazy"/>
                             ))}
                         </SubImageCarousel>
                     </div>

@@ -21,7 +21,7 @@ export const VisitComponent = React.memo(({ data, setSelected, setDialog }) => {
                             <div style={{ boxShadow: "0px 0px 10px #00000014", transition: "all 0.4s ease", borderRadius: '10px', maxWidth: '350px', marginLeft: '10px', height: '580px' }} className="single-news hover:scale-105 hover:shadow-md">
                                 <div style={{ width: '350px' }} className="news-head">
                                     <div className="image-container cursor-default">
-                                        <img className="rounded-md p-0" style={{ transition: "all 0.4s ease", height: "260px", width: "350px" }} src={item.img} alt="#" />
+                                        <img className="rounded-md p-0" style={{ transition: "all 0.4s ease", height: "260px", width: "350px" }} src={item.img} alt="#" loading="lazy"/>
                                         <div className='detail-button cursor-pointer flex justify-center item-center'>
                                             <OpenInFullIcon style={{fontSize: "15px", marginRight: "10px"}}/>Show More
                                         </div>

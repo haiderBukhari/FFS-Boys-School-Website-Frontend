@@ -14,13 +14,13 @@ const HomeAbout = React.memo(() => {
                     <div className="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.1s">
                         <div className="row">
                             <div className="col-12 text-center">
-                                <Image className="img-fluid w-100 rounded-circle bg-light p-3" cloudName="dlv0dshiq" publicId="head_xoppyq" />
+                                <Image className="img-fluid w-100 rounded-circle bg-light p-3" cloudName="dlv0dshiq" publicId="head_xoppyq" loading="lazy"/>
                             </div>
                             <div className="col-6 text-start" style={{ marginTop: '-150px' }}>
-                                <Image className="img-fluid w-100 rounded-circle bg-light p-3" cloudName="dlv0dshiq" publicId="activity1_peghul" />
+                                <Image className="img-fluid w-100 rounded-circle bg-light p-3" cloudName="dlv0dshiq" publicId="activity1_peghul" loading="lazy"/>
                             </div>
                             <div className="col-6 text-end" style={{ marginTop: '-150px' }}>
-                                <Image className="img-fluid w-100 rounded-circle bg-light p-3" cloudName="dlv0dshiq" publicId="activity2_glwyv8" />
+                                <Image className="img-fluid w-100 rounded-circle bg-light p-3" cloudName="dlv0dshiq" publicId="activity2_glwyv8" loading="lazy"/>
                             </div>
                         </div>
                     </div>
