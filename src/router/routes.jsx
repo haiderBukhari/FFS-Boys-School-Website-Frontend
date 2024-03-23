@@ -16,6 +16,7 @@ import FacultyUploadMaterial from "../pages/FacultyResource/uploadResources"
 import { useSelector } from 'react-redux';
 import NewFaculty from "../pages/FacultyOnboarding/newFaculty"
 import Blogs from "../pages/Blogs"
+import PrizeCeremony from '../pages/Ceremony/PrizeDistrubutionCeremony2024'
 
 const Routers = () => {
     const userData = useSelector(state=>state.userData);
@@ -36,6 +37,7 @@ const Routers = () => {
                 <Route path="/feedback" element={userData.id ? <Feedback /> : <Navigate to="/login" />} />
                 <Route path="/students/resources/:Facultyclass/:subject/:id" element={<FacultyMaterial/>} />
                 <Route path="/faculty/onboarding" element={userData.id ? <NewFaculty/> : <Navigate to="/login" />} />
+                <Route path="/prize/ceremony" element={<PrizeCeremony/>} />
                 <Route path="/faculty/upload/resources/:Facultyclass/:subject/:id" element={userData.id ? <FacultyUploadMaterial/> : <Navigate to="/login" />} />
                 <Route path="*" element={"Page not Found"} />
             </Routes>

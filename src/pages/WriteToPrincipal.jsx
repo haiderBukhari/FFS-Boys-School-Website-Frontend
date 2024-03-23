@@ -15,6 +15,8 @@ export const WriteToPrincipal = () => {
     const [userInfo, setUserInfo] = useState(tempUserData)
     const onSubmit = (e) => {
         e.preventDefault();
+        if(!userInfo.message) {ErrorToast('Message is required'); return}
+        else if(!userInfo.className) {ErrorToast('Select Class'); return}
         axios.post(`${process.env.REACT_APP_BACKEND_PORT}/principal`, userInfo, {
             headers: {
                 'Content-Type': 'application/json',
@@ -71,7 +73,7 @@ export const WriteToPrincipal = () => {
                                         </div>
                                         <div className="col-12 col-sm-6 flex items-center justify-center">
                                             <select onChange={(e) => { setUserInfo({ ...userInfo, className: e.target.value }) }} className="form-select border-0 flex items-center justify-center" style={{ height: "55px", marginBottom: '20px', width: '400px', padding: '10px' }}>
-                                                <option selected>Select Class</option>
+                                                <option value="" disabled selected>Select Class</option>
                                                 {
                                                     Object.keys(classData).map((item, index) => (
                                                         <option key={index + 1000} value={item}>{item}</option>

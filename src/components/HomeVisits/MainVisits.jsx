@@ -18,13 +18,21 @@ export const MainVisits = React.memo(() => {
         {
             id: 1,
             date: "22 Aug, 2020",
+            img: "https://scontent.fisb2-2.fna.fbcdn.net/v/t39.30808-6/433707904_314409151655138_1453173099344039477_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGzucsNmRW48MUNW6Pp_icUZr_EHymbLOtmv8QfKZss60yHxzUPUJZEEtM_3KWkvw2OvUhun0mer90MxWrOT2Zq&_nc_ohc=XifqOLgzuokAX_jXzzj&_nc_ht=scontent.fisb2-2.fna&oh=00_AfAvH8GN3tAX4NBH9RaQdI6--Qp_A2GPyV-nUZTgVzxJ_g&oe=660310B2",
+            title: "Visit of Honourable Regional Head Col (Retd) Fazal Wahab.",
+            text: "Col (Retd) Fazal Wahab visiting FFS Boys Wah for Annual Prize Distrubution 2024.",
+            images: ["https://scontent.fisb2-2.fna.fbcdn.net/v/t39.30808-6/433707904_314409151655138_1453173099344039477_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGzucsNmRW48MUNW6Pp_icUZr_EHymbLOtmv8QfKZss60yHxzUPUJZEEtM_3KWkvw2OvUhun0mer90MxWrOT2Zq&_nc_ohc=XifqOLgzuokAX_jXzzj&_nc_ht=scontent.fisb2-2.fna&oh=00_AfAvH8GN3tAX4NBH9RaQdI6--Qp_A2GPyV-nUZTgVzxJ_g&oe=660310B2", "https://scontent.fisb2-2.fna.fbcdn.net/v/t39.30808-6/434157248_314390578323662_459835468077711060_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEu_gB5vKhGCP8atYxnDxwA8V0Jjz5CKW_xXQmPPkIpb5EOsvBTPGiToVTIo10pi1yTzR9Bjz174zmvCk-mU99j&_nc_ohc=AEeItxJsS5AAX-wtB1f&_nc_ht=scontent.fisb2-2.fna&oh=00_AfClTt-L66bEnU4Ws8-X-IbO1vmqVGj0pMeoDNRM63mHXg&oe=66039267"]
+        }
+        , {
+            id: 2,
+            date: "22 Aug, 2020",
             img: visit1,
             title: "Visit of Respected Ex Director FFES Maj Gen Naseer Ali Khan (Retd).",
             text: "Honourable Ex Director FFES Maj Gen Naseer Ali Khan visiting FFS Boys Wah",
             images: [visit1]
         },
         {
-            id: 2,
+            id: 3,
             date: "22 Aug, 2020",
             img: visit2,
             title: "Visit of worthy General Manager(Education) Brig Asim Siddiqui, SI(M) (Retd).",
@@ -32,7 +40,7 @@ export const MainVisits = React.memo(() => {
             images: [visit2, visit21, visit22, visit23, visit24]
         },
         {
-            id: 3,
+            id: 4,
             date: "22 Aug, 2020",
             img: visit3,
             title: "Visit of Honourable Sr Manager Col Nauman Bukhari (Retd).",
