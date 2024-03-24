@@ -29,7 +29,7 @@ export const VisitComponent = React.memo(({ data, setSelected, setDialog }) => {
                                 </div>
                                 <div className="news-body" style={{ padding: '0 20px 40px 10px' }}>
                                     <div className="news-content">
-                                        <div className="date" style={{ backgroundColor: '#1A76D1', color: '#fff', width: '120px', textAlign: 'center', margin: '30px 0 20px 0', padding: '4px 10px', borderRadius: '3px' }}>{item.date}</div>
+                                        {/* <div className="date" style={{ backgroundColor: '#1A76D1', color: '#fff', width: '120px', textAlign: 'center', margin: '30px 0 20px 0', padding: '4px 10px', borderRadius: '3px' }}>{item.date}</div> */}
                                         <h2 style={{ marginBottom: '4px' }}><a href="/" style={{ fontFamily: 'sans-serif', fontWeight: '700', fontSize: '20px', textAlign: 'justify', lineHeight: '2.0rem' }}>{item.title}</a></h2>
                                         <p style={{ textAlign: 'justify', marginTop: '15px' }} className="text">{item.text}</p>
                                     </div>
