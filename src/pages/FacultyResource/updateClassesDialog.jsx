@@ -54,7 +54,7 @@ const UploadClassesDialog = ({ open, setOpen, setFacultyData }) => {
     const SubmitRegisteration = (e) => {
         setLoading(true);
         e.preventDefault();
-        const resultItem = userDataChange.assignedClasses.some((item) => item.class === "" || !item.subjects.length);
+        // const resultItem = userDataChange.assignedClasses.some((item) => item.class === "" || !item.subjects.length);
         console.log(userData)
         // if (resultItem) {
         //     setLoading(false);

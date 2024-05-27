@@ -49,7 +49,7 @@ const ContactUs = () => {
                                 window.outerWidth > 500 && <div className="col-lg-6">
                                     <div className="contact-us-left">
                                         <div id="myMap">
-                                            <iframe style={{ frameborder: '0', minHeight: '400px', border: '0', tabindex: '0' }} className="position-relative rounded w-100 h-100"
+                                            <iframe title="ffsmap" style={{ frameborder: '0', minHeight: '400px', border: '0', tabindex: '0' }} className="position-relative rounded w-100 h-100"
                                                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10940.827157605738!2d72.6686897!3d33.7716564!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcfc4650d8d975fb3!2sWah%20Cantt.%2C%20Wah%2C%20Rawalpindi%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd" allowfullscreen="" aria-hidden="false"></iframe>
                                         </div>
                                     </div>

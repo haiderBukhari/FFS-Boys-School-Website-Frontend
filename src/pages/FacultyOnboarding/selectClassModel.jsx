@@ -55,20 +55,20 @@ const ClassModel = ({ open, setOpen }) => {
         if (!userDataChange.contactNumber) {
             return ErrorToast("Please Fill All Fields")
         }
-        const processedClasses = userData.assignedClasses.reduce((accumulator, currentClass) => {
-            const existingClass = accumulator.find((item) => item.class === currentClass.class);
+        // const processedClasses = userData.assignedClasses.reduce((accumulator, currentClass) => {
+        //     const existingClass = accumulator.find((item) => item.class === currentClass.class);
 
-            if (existingClass) {
-                existingClass.subjects = [...new Set([...existingClass.subjects, ...currentClass.subjects])];
-            } else {
-                accumulator.push({ ...currentClass });
-            }
-            return accumulator;
-        }, []);
+        //     if (existingClass) {
+        //         existingClass.subjects = [...new Set([...existingClass.subjects, ...currentClass.subjects])];
+        //     } else {
+        //         accumulator.push({ ...currentClass });
+        //     }
+        //     return accumulator;
+        // }, []);
 
-        const assignedClassesIdRemoved = processedClasses.map((Items) => {
-            return { class: Items.class, subjects: Items.subjects }
-        })
+        // const assignedClassesIdRemoved = processedClasses.map((Items) => {
+        //     return { class: Items.class, subjects: Items.subjects }
+        // })
         setLoading(true);
         axios.patch(`${process.env.REACT_APP_BACKEND_PORT}/register`, {
             id: userData.id,

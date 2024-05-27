@@ -7,8 +7,6 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import axios from 'axios'
 import { SuccesToast, ErrorToast } from './../ReactToast';
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useSelector } from 'react-redux';
 
