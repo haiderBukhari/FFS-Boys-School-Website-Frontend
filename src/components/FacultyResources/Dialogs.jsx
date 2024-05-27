@@ -63,18 +63,18 @@ export function DeleteAlertDialog({ open, setOpen, selectedData, facultyId, subj
 }
 
 
-export const EditAlertDialog = ({ open, setOpen, selectedData, facultyId, subject, Facultyclass, setSelectedData, setFetchAgain, fetchAgain, setLoading  }) => {
+export const EditAlertDialog = ({ open, setOpen, selectedData, facultyId, subject, Facultyclass, setSelectedData, setFetchAgain, fetchAgain, setLoading }) => {
     const [title, setTitle] = useState(selectedData.title);
     const [description, setDescription] = useState(selectedData.description);
     const [link, setLink] = useState(selectedData.link);
     const [FacultyData, setFacultyData] = useState(useSelector(state => state.userData)) //eslint-disable-line
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         setTitle(selectedData.title);
         setDescription(selectedData.description);
         setLink(selectedData.link);
     }, [selectedData])
-    
+
     const handleAgree = () => {
         setLoading(true)
         axios.delete(`${process.env.REACT_APP_BACKEND_PORT}/faculty/${facultyId}/${subject}/${Facultyclass}/${selectedData._id}`, {
@@ -93,7 +93,8 @@ export const EditAlertDialog = ({ open, setOpen, selectedData, facultyId, subjec
                 title: title,
                 link: link,
                 description: description,
-                isDriveData: selectedData.isDriveData
+                isMeetingLink: selectedData.isMeetingLink,
+                isLink: selectedData.isLink,
             }, {
                 headers: {
                     "Authorization": "Bearer " + localStorage.getItem("Token"),
@@ -129,7 +130,7 @@ export const EditAlertDialog = ({ open, setOpen, selectedData, facultyId, subjec
                 <DialogTitle id="alert-dialog-title">{`Class ${Facultyclass} (${subject}) Material Edit`}</DialogTitle>
                 <DialogContent>
                     <div className='flex justify-center items-center'>
-                        <p style={{ textAlign: "center" }}>{selectedData.isDriveData ? 'Google Drive' : 'Other (Youtube/ Google Links)'}</p>
+                        <p style={{ textAlign: "center" }}>{selectedData.isMeetingLink ? 'Meeting Link' : 'Other (Youtube/ Google Links)'}</p>
                     </div>
                     <TextField
                         label="Link"
@@ -149,15 +150,18 @@ export const EditAlertDialog = ({ open, setOpen, selectedData, facultyId, subjec
                         fullWidth
                         margin="normal"
                     />
-                    <TextField
-                        label="Description"
-                        value={description}
-                        onChange={(e) => setDescription(e.target.value)}
-                        multiline
-                        rows={3}
-                        fullWidth
-                        margin="normal"
-                    />
+                    {
+                        !selectedData.isMeetingLink &&
+                        <TextField
+                            label="Description"
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                            multiline
+                            rows={3}
+                            fullWidth
+                            margin="normal"
+                        />
+                    }
                 </DialogContent>
                 <DialogActions>
                     <Button style={{ backgroundColor: '#1A76D1', color: '#fff', width: '100px', textAlign: 'center', margin: '3px 4px', padding: '4px 6px', borderRadius: "6px" }} onClick={() => { setOpen(false) }}>Close</Button>

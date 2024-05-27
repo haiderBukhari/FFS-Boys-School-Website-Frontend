@@ -21,7 +21,7 @@ const HomeNotificationDialog = ({ open, setOpen }) => {
                 </DialogTitle>
                 <DialogContent>
                     <div className='flex flex-col'>
-                        <a href="/prize/ceremony" style={{ fontSize: "17px", color: 'blue', margin: "0 0 15px 0" }}>👉 Annual Prize Distribution Ceremony 2024</a>
+                        {/* <a href="/prize/ceremony" style={{ fontSize: "17px", color: 'blue', margin: "0 0 15px 0" }}>👉 Annual Prize Distribution Ceremony 2024</a> */}
                         <a href="/courses/web-development" style={{ fontSize: "17px", color: 'blue', margin: "0 0 15px 0" }}>👉 Website Development Course</a>
                     </div>
                     {/* <hr/> */}

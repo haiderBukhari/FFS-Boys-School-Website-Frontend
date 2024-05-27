@@ -11,12 +11,13 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import { useNavigate } from 'react-router-dom';
 import AddIcon from '@mui/icons-material/Add';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import CloseIcon from '@mui/icons-material/Close';
 import { addUserData } from '../../Interface/userDataSlice';
 import classList from '../../data/class.json'
 
 const UploadClassesDialog = ({ open, setOpen, setFacultyData }) => {
-    const userData = useSelector(state => state.userData);
+    const [userData, setUserData] = useState(useSelector(state => state.userData));
     const classData = classList.classList;
     const [loading, setLoading] = useState(false);
     const Navigate = useNavigate();
@@ -51,15 +52,20 @@ const UploadClassesDialog = ({ open, setOpen, setFacultyData }) => {
         setUserDataChange({ ...prevData, assignedClasses: updatedClasses });
     };
     const SubmitRegisteration = (e) => {
-        setLoading(true)
+        setLoading(true);
         e.preventDefault();
-        const resultItem = userDataChange.assignedClasses.some((item)=>item.class==="" || !item.subjects.length)
-        if(resultItem){
-            ErrorToast("Fill the required fields")
-            return;
-        }
-        // if(resultItem ==)
-        const processedClasses = userDataChange.assignedClasses.reduce((accumulator, currentClass) => {
+        const resultItem = userDataChange.assignedClasses.some((item) => item.class === "" || !item.subjects.length);
+        console.log(userData)
+        // if (resultItem) {
+        //     setLoading(false);
+        //     ErrorToast("Fill the required fields");
+        //     return;
+        // }
+
+        // Merge assignedClasses from userDataChange and userData
+        const mergedAssignedClasses = [...userDataChange.assignedClasses, ...userData.assignedClasses];
+
+        const processedClasses = mergedAssignedClasses.reduce((accumulator, currentClass) => {
             const existingClass = accumulator.find((item) => item.class === currentClass.class);
 
             if (existingClass) {
@@ -71,9 +77,9 @@ const UploadClassesDialog = ({ open, setOpen, setFacultyData }) => {
         }, []);
 
         const assignedClassesIdRemoved = processedClasses.map((Items) => {
-            return { class: Items.class, subjects: Items.subjects }
-        })
-        setLoading(true);
+            return { class: Items.class, subjects: Items.subjects };
+        });
+
         axios.patch(`${process.env.REACT_APP_BACKEND_PORT}/register/${userData.id}`, {
             facultyAssignedClasses: assignedClassesIdRemoved
         }, {
@@ -84,14 +90,14 @@ const UploadClassesDialog = ({ open, setOpen, setFacultyData }) => {
             }
         }).then((res) => {
             setLoading(false);
-            SuccesToast("Updated")
-            Navigate('/faculty/dashboard')
+            SuccesToast("Updated");
+            Navigate('/faculty/dashboard');
             const Userdata = {
                 id: res.data.data._id,
                 ...res.data.data
             }
             dispatch(addUserData(Userdata));
-            setFacultyData(Userdata)
+            setFacultyData(Userdata);
             setUserDataChange({
                 assignedClasses: [
                     {
@@ -100,13 +106,14 @@ const UploadClassesDialog = ({ open, setOpen, setFacultyData }) => {
                         subjects: []
                     }
                 ]
-            })
+            });
         }).catch((err) => {
             setLoading(false);
             ErrorToast("Error");
         });
         setOpen(false);
-    }
+    };
+
     const handleClassChange = (e, itemId) => {
         const selectedClass = e.target.value;
         setUserDataChange((prevData) => {
@@ -143,6 +150,15 @@ const UploadClassesDialog = ({ open, setOpen, setFacultyData }) => {
             ]
         })
     }, [open, setOpen])
+    const handleDelete = (id) => {
+        const updatedAssignedClasses = userData.assignedClasses.filter((item) => item._id !== id);
+        const updatedUserData = {
+            ...userData,
+            assignedClasses: updatedAssignedClasses
+        };
+        setUserData(updatedUserData);
+    };
+
     return (
         <React.Fragment>
             <Dialog
@@ -155,14 +171,16 @@ const UploadClassesDialog = ({ open, setOpen, setFacultyData }) => {
                 <DialogContent>
                     <p style={{ color: "#000", margin: 0, fontSize: "14px", fontWeight: "bold" }}>Select Class and corresponding subjects in which you are teaching permanently.</p>
                     {
-                        userData.assignedClasses.map((Item) => (
+                        userData?.assignedClasses?.map((Item) => (
                             Item &&
-                            <div key={Item?.id} className={`flex justify-center items-center mt-2 ${window.innerWidth < 327 && 'flex-wrap'}`}>
+                            <div key={Item?._id} className={`flex justify-center items-center mt-2 ${window.innerWidth < 327 && 'flex-wrap'}`}>
                                 <input style={{ backgroundColor: "#eee", border: "none", marginRight: "10px", height: "36px", borderRadius: '6px', width: "120px", outline: "none", marginTop: "10px" }} type="text" placeholder={`Class ${Item?.class}`} disabled={true} />
                                 <input style={{ backgroundColor: "#eee", border: "none", marginRight: "10px", height: "36px", borderRadius: '6px', width: "100%", outline: "none", marginTop: "10px" }} type="text" placeholder={`Subject ${Item?.subjects}`} disabled={true} />
+                                <DeleteOutlineIcon onClick={() => handleDelete(Item._id)}/>
                             </div>
                         ))
                     }
+
                     {
                         userDataChange.assignedClasses.map((Items, index) => (
                             <div key={Items.id} className={`flex justify-center items-center mt-2 ${window.innerWidth < 327 && 'flex-wrap'}`}>

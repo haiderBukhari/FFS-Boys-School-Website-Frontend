@@ -129,14 +129,18 @@ const FacultyMaterialComponents = ({ id, subject, Facultyclass, fetchAgain, setF
                                     <h1 style={{ fontWeight: "bold", fontSize: "1.5rem", marginTop: "20px", marginBottom: "10px" }}>Title:</h1>
                                     <p className='font-normal text-base' style={{ marginBottom: "20px" }}>{Items.title}</p>
                                     <hr style={{ borderColor: "gray", margin: "20px 0" }} />
-                                    <h1 style={{ fontWeight: "bold", fontSize: "1.5rem", marginBottom: "10px" }}>Description:</h1>
-                                    <p className='font-normal text-base' style={{ marginBottom: "20px" }}>{Items.description}</p>
+                                    {
+                                        !Items.isMeetingLink && <>
+                                            <h1 style={{ fontWeight: "bold", fontSize: "1.5rem", marginBottom: "10px" }}>Description:</h1>
+                                            <p className='font-normal text-base' style={{ marginBottom: "20px" }}>{Items.description}</p>
+                                        </>
+                                    }
                                     <div className='flex flex-wrap justify-center'>
                                         {
                                             Items.isDriveData ? (
                                                 <>
-                                                    <button style={{ padding: "10px 10px", marginRight: "4px", marginTop: "10px" }} onClick={() => { OpeninBrowser(Items.link) }} className='btn-primary'>
-                                                        <VisibilityIcon /> View Document
+                                                    <button style={{ padding: "10px 10px", marginRight: "4px", marginTop: "10px" }} onClick={() => { OpeninBrowser(Items.link) }} className='btn-primary flex justify-center items-center'>
+                                                        <VisibilityIcon /> <p className='text-md ml-2 text-white'>View Document</p>
                                                     </button>
                                                 </>
                                             ) : (<>

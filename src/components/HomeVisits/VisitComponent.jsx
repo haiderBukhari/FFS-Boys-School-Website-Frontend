@@ -21,14 +21,14 @@ export const VisitComponent = React.memo(({ data, setSelected, setDialog }) => {
                             <div style={{ boxShadow: "0px 0px 10px #00000014", transition: "all 0.4s ease", borderRadius: '10px', maxWidth: '350px', marginLeft: '10px', height: '580px' }} className="single-news hover:scale-105 hover:shadow-md">
                                 <div style={{ width: '350px' }} className="news-head">
                                     <div className="image-container cursor-default">
-                                        <img className="rounded-md p-0" style={{ transition: "all 0.4s ease", height: "260px", width: "350px" }} src={item.img} alt="#" loading="lazy"/>
+                                        <img className="rounded-md p-0 " style={{ transition: "all 0.4s ease", height: "260px", width: "350px" }} src={item.img} alt="#" loading="lazy"/>
                                         <div className='detail-button cursor-pointer flex justify-center item-center'>
                                             <OpenInFullIcon style={{fontSize: "15px", marginRight: "10px"}}/>Show More
                                         </div>
                                     </div>
                                 </div>
                                 <div className="news-body" style={{ padding: '0 20px 40px 10px' }}>
-                                    <div className="news-content">
+                                    <div className="news-content mt-4">
                                         {/* <div className="date" style={{ backgroundColor: '#1A76D1', color: '#fff', width: '120px', textAlign: 'center', margin: '30px 0 20px 0', padding: '4px 10px', borderRadius: '3px' }}>{item.date}</div> */}
                                         <h2 style={{ marginBottom: '4px' }}><a href="/" style={{ fontFamily: 'sans-serif', fontWeight: '700', fontSize: '20px', textAlign: 'justify', lineHeight: '2.0rem' }}>{item.title}</a></h2>
                                         <p style={{ textAlign: 'justify', marginTop: '15px' }} className="text">{item.text}</p>
